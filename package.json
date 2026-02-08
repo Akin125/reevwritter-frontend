@@ -2,13 +2,9 @@
   "name": "thesiora-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://<username>.github.io/reevwritter-frontend",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
-    "predeploy": "next build && next export",
-    "deploy": "gh-pages -d out",
     "start": "next start",
     "lint": "eslint"
   },
@@ -25,7 +21,6 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.4",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "gh-pages": "^5.0.0"
+    "typescript": "^5"
   }
 }

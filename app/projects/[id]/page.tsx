@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import Link from "next/link";
 import {
   getProject,
@@ -12,7 +13,8 @@ import {
   Project,
 } from "@/lib/api";
 
-export default function ProjectDetailClient({ id }: { id: string }) {
+export default function ProjectDetailPage() {
+  const { id } = useParams<{ id: string }>();
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -116,7 +118,7 @@ export default function ProjectDetailClient({ id }: { id: string }) {
 
   const getActionButton = (fromStatus: string, toStatus: string) => {
     if (project.status !== fromStatus) return null;
-
+    
     const labels: Record<string, string> = {
       "draft-planning": "Generate Plan",
       "planning-writing": "Start Writing",
@@ -272,4 +274,3 @@ export default function ProjectDetailClient({ id }: { id: string }) {
     </div>
   );
 }
-
