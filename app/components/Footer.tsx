@@ -2,7 +2,11 @@
 const thesioraLogo = "/assets/thesiora-logo.png";
 import { Twitter, Linkedin, Github } from "lucide-react";
 
-const Footer = () => {
+interface FooterProps {
+  variant?: string;
+}
+
+const Footer = ({ variant }: FooterProps = {}) => {
   return (
     <footer className="border-t border-border py-12 px-6">
       <div className="container mx-auto max-w-5xl">
