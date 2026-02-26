@@ -25,7 +25,7 @@ export default function Blog() {
 
   return (
     <div className="flex min-h-screen flex-col bg-white font-sans dark:bg-black">
-      {/* Header */}
+      {/* Headerold */}
       <Header currentPage="/blog" />
 
       {/* Main Content */}
@@ -38,7 +38,7 @@ export default function Blog() {
           </div>
 
           <div className="mx-auto max-w-7xl relative">
-            {/* Header */}
+            {/* Headerold */}
             <div className="mb-12 sm:mb-16 text-center">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-4">Thesiora Writer Blog</h1>
               <p className="text-zinc-700 dark:text-zinc-300 text-base sm:text-lg max-w-3xl mx-auto">
@@ -248,7 +248,7 @@ export default function Blog() {
         </div>
       </main>
 
-      {/* Footer */}
+      {/* Footerold */}
       <Footer variant="minimal" />
     </div>
   );

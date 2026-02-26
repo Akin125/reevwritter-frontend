@@ -30,7 +30,7 @@ export default function ContactUs() {
 
   return (
     <div className="flex min-h-screen flex-col bg-zinc-50 font-sans dark:bg-black">
-      {/* Header */}
+      {/* Headerold */}
       <Header currentPage="/contact" />
 
       {/* Main Content */}
@@ -43,7 +43,7 @@ export default function ContactUs() {
           </div>
 
           <div className="mx-auto max-w-6xl relative">
-            {/* Header */}
+            {/* Headerold */}
             <div className="text-center mb-12 sm:mb-16">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">Contact Us</h1>
               <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
@@ -285,7 +285,7 @@ export default function ContactUs() {
         </div>
       </main>
 
-      {/* Footer */}
+      {/* Footerold */}
       <Footer variant="minimal" />
     </div>
   );

@@ -125,7 +125,7 @@ export default function Pricing() {
 
   return (
     <div className="flex min-h-screen flex-col bg-zinc-50 font-sans dark:bg-black">
-      {/* Header */}
+      {/* Headerold */}
       <Header currentPage="/pricing" />
 
       {/* Main Content */}
@@ -138,7 +138,7 @@ export default function Pricing() {
           </div>
 
           <div className="mx-auto max-w-7xl relative">
-            {/* Header */}
+            {/* Headerold */}
             <div className="text-center mb-12 sm:mb-16">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">Choose Your Plan</h1>
               <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto mb-8">
@@ -470,7 +470,7 @@ export default function Pricing() {
         </div>
       </main>
 
-      {/* Footer */}
+      {/* Footerold */}
       <Footer variant="minimal" />
     </div>
   );

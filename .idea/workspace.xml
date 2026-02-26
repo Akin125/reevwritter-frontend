@@ -1,20 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2106875e-7751-4d03-aa14-e77f96b9b7f1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/components/Footerold.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/Headerold.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/HeroSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/HowItWorks.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/NavLink.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ProductShowcase.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ValueProposition.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/mockups/FeatureMockups.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/mockups/HeroMockup.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/mockups/MockupChatMessage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/mockups/MockupSearchBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/mockups/MockupSidebar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/mockups/MockupSourceCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/mockups/MockupWindow.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/mockups/StepMockups.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/accordion.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/alert-dialog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/alert.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/aspect-ratio.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/avatar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/badge.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/breadcrumb.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/calendar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/carousel.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/chart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/checkbox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/collapsible.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/command.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/context-menu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/dialog.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/drawer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/dropdown-menu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/hover-card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/input-otp.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/input.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/label.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/menubar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/navigation-menu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/pagination.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/popover.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/progress.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/radio-group.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/resizable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/scroll-area.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/select.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/separator.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/sheet.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/sidebar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/skeleton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/slider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/sonner.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/switch.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/table.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/tabs.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/textarea.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/toast.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/toaster.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/toggle-group.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/toggle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/tooltip.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/ui/use-toast.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/use-mobile.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/use-toast.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/useParallax.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/useScrollAnimation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks/useSpotsCounter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/app-mockup.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/feature-ask.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/feature-ask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/feature-citations.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/feature-citations.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/feature-connect.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/feature-document.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/feature-interface.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/feature-shortcut.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/feature-sources.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hero-abstract.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hero-app.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hero-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hero-mockup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/illustration-ask.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/illustration-citations.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/illustration-instant.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/step-export.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/step-research.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/step-upload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/step-verify.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/thesiora-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/blog/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/blog/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/blog/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/contact/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/contact/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/faq/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/faq/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forgot-password/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/forgot-password/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pricing/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/pricing/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/privacy-policy/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/privacy-policy/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/register/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/register/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/reset-password/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/reset-password/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/terms-of-service/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/terms-of-service/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/user-guide/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/user-guide/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/verify-email/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/verify-email/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.mjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/Dell/IdeaProjects/reevwritter-frontend" value="39NqwuVl3x90UMzyXhafI7smxCA" />
+    </persistenceIdMap>
+  </component>
+  <component name="CopilotUserSelectedModel">
+    <selectedModels>
+      <entry key="chat-panel" value="Claude Sonnet 4.5" />
+      <entry key="agent-panel" value="Claude Sonnet 4.5" />
+    </selectedModels>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Akin125&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Akin125/reevwritter-frontend.git&quot;,
+    &quot;accountId&quot;: &quot;fa5fab96-5eaf-4a13-a36b-9a604bb49542&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="39NqwuVl3x90UMzyXhafI7smxCA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,12 +168,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "js.debugger.nextJs.config.created.client": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Dell/IdeaProjects/reevwritter-frontend",
+    "last_opened_file_path": "C:/Users/Dell/IdeaProjects/reevwritter-frontend/public/assets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -36,6 +185,7 @@
     "nodejs_package_manager_path": "npm",
     "npm.build.executor": "Run",
     "npm.dev.executor": "Run",
+    "ts.external.directory.path": "C:\\Users\\Dell\\IdeaProjects\\reevwritter-frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -44,15 +194,22 @@
       <map>
         <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
         <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
       </map>
     </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dell\IdeaProjects\reevwritter-frontend\public\assets" />
+      <recent name="C:\Users\Dell\IdeaProjects\reevwritter-frontend\lib" />
       <recent name="C:\Users\Dell\IdeaProjects\reevwritter-frontend" />
+      <recent name="C:\Users\Dell\IdeaProjects\reevwritter-frontend\app\components" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -75,16 +232,16 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
       </set>
     </attachedChunks>
   </component>
@@ -95,7 +252,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1770547118059</updated>
-      <workItem from="1770547119473" duration="374000" />
+      <workItem from="1770547119473" duration="2152000" />
+      <workItem from="1770703770018" duration="601000" />
+      <workItem from="1772088494884" duration="92000" />
+      <workItem from="1772088602251" duration="178000" />
+      <workItem from="1772089163338" duration="5234000" />
     </task>
     <servers />
   </component>

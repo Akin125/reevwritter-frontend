@@ -1,170 +1,54 @@
-import Link from 'next/link';
+// Placeholder logo - replace with your actual logo
+const thesioraLogo = "/assets/thesiora-logo.png";
+import { Twitter, Linkedin, Github } from "lucide-react";
 
-interface FooterProps {
-  variant?: 'default' | 'minimal';
-}
-
-export default function Footer({ variant = 'default' }: FooterProps) {
-  const currentYear = new Date().getFullYear();
-
-  if (variant === 'minimal') {
-    return (
-      <footer className="border-t border-zinc-200 bg-white/50 px-6 py-8 dark:border-zinc-800 dark:bg-zinc-950/50">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center">
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
-              © {currentYear} Thesiora Writer. All rights reserved.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <Link
-                href="/privacy-policy"
-                className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms-of-service"
-                className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                href="/contact"
-                className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
-    );
-  }
-
+const Footer = () => {
   return (
-    <footer className="border-t border-zinc-200 bg-white px-6 py-12 dark:border-zinc-800 dark:bg-zinc-950">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-8">
-          {/* Brand Section */}
-          <div>
-            <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">
-              Thesiora Writer
-            </h3>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-md mb-4">
-              AI-Powered Evidence-Based Research Writing Platform. Transform assignment briefs into published-grade
-              academic papers using intelligent multi-agent workflows. Built with Gemini 2.5 Flash and modern web technologies.
-            </p>
-            <div className="flex gap-4 text-sm text-zinc-600 dark:text-zinc-400">
-              <span>🔒 GDPR Compliant</span>
-              <span>✓ 99.5% Uptime</span>
-              <span>🌍 Global Access</span>
-            </div>
+    <footer className="border-t border-border py-12 px-6">
+      <div className="container mx-auto max-w-5xl">
+        <div className="flex flex-col items-center text-center mb-8">
+          {/* Logo */}
+          <div className="flex items-center gap-3 mb-4">
+            <img 
+              src={thesioraLogo} 
+              alt="Thesiora" 
+              className="h-8 w-8 brightness-0 invert"
+            />
+            <span className="font-display font-bold text-xl text-foreground">
+              Thesiora
+            </span>
           </div>
+          
+          <p className="text-muted-foreground text-sm max-w-md mb-6">
+            Smart, evidence-based report writing. You stay the author.
+          </p>
 
-          {/* Platform Links */}
-          <div>
-            <h4 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-4">Platform</h4>
-            <div className="space-y-2 text-sm">
-              <Link
-                href="/#features"
-                className="block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
+          {/* Social links */}
+          <div className="flex items-center gap-2">
+            {[Twitter, Linkedin, Github].map((Icon, index) => (
+              <a 
+                key={index}
+                href="#" 
+                className="w-10 h-10 rounded-full bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all duration-200"
               >
-                Features
-              </Link>
-              <Link
-                href="/#agents"
-                className="block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                AI Agents
-              </Link>
-              <Link
-                href="/#how-it-works"
-                className="block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                How It Works
-              </Link>
-              <Link
-                href="/#use-cases"
-                className="block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                Use Cases
-              </Link>
-              <Link
-                href="/dashboard"
-                className="block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                Dashboard
-              </Link>
-            </div>
-          </div>
-
-          {/* Resources Links */}
-          <div>
-            <h4 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-4">Resources</h4>
-            <div className="space-y-2 text-sm">
-              <Link
-                href="/user-guide"
-                className="block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                User Guide
-              </Link>
-              <Link
-                href="/faq"
-                className="block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                FAQ
-              </Link>
-              <Link
-                href="/blog"
-                className="block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                Blog
-              </Link>
-              <Link
-                href="/pricing"
-                className="block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                Pricing
-              </Link>
-              <Link
-                href="/contact"
-                className="block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
-
-          {/* Legal Links */}
-          <div>
-            <h4 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-4">Legal</h4>
-            <div className="space-y-2 text-sm">
-              <Link
-                href="/privacy-policy"
-                className="block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms-of-service"
-                className="block text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
-              >
-                Terms of Service
-              </Link>
-            </div>
+                <Icon className="w-4 h-4" />
+              </a>
+            ))}
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-zinc-200 pt-8 dark:border-zinc-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-zinc-600 dark:text-zinc-400">
-              © {currentYear} Thesiora Writer. All rights reserved.
-            </p>
+        {/* Bottom row */}
+        <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} Thesiora. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
+            <a href="#" className="hover:text-foreground transition-colors">Terms</a>
+            <a href="#" className="hover:text-foreground transition-colors">Contact</a>
           </div>
         </div>
       </div>
     </footer>
   );
-}
+};
 
+export default Footer;

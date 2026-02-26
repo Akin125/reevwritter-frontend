@@ -6,7 +6,7 @@ import { Header, Footer } from '../components';
 export default function TermsOfService() {
   return (
     <div className="flex min-h-screen flex-col bg-zinc-50 font-sans dark:bg-black">
-      {/* Header */}
+      {/* Headerold */}
       <Header currentPage="/terms-of-service" />
 
       {/* Main Content */}
@@ -19,7 +19,7 @@ export default function TermsOfService() {
           </div>
 
           <div className="mx-auto max-w-5xl relative">
-            {/* Header */}
+            {/* Headerold */}
             <div className="mb-8 sm:mb-12">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">Terms of Service</h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg">Last Updated: January 31, 2026</p>
@@ -510,7 +510,7 @@ export default function TermsOfService() {
         </div>
       </main>
 
-      {/* Footer */}
+      {/* Footerold */}
       <Footer variant="minimal" />
     </div>
   );

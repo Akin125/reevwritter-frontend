@@ -107,7 +107,7 @@ export default function Dashboard() {
       </aside>
 
       <div className="flex-1">
-        {/* Header */}
+        {/* Headerold */}
         <header className="border-b border-zinc-200/80 bg-white/80 px-6 py-4 backdrop-blur dark:border-zinc-800/80 dark:bg-zinc-950/80">
           <div className="mx-auto flex max-w-7xl items-center justify-between">
             <Link href="/" className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">

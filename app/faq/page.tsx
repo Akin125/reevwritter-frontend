@@ -220,7 +220,7 @@ export default function FAQ() {
 
   return (
     <div className="flex min-h-screen flex-col bg-white font-sans dark:bg-black">
-      {/* Header */}
+      {/* Headerold */}
       <Header currentPage="/faq" />
 
       {/* Main Content */}
@@ -233,7 +233,7 @@ export default function FAQ() {
           </div>
 
           <div className="mx-auto max-w-5xl relative">
-            {/* Header */}
+            {/* Headerold */}
             <div className="mb-12 sm:mb-16 text-center">
               <div className="text-6xl mb-6">❓</div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-4">Frequently Asked Questions</h1>
@@ -329,7 +329,7 @@ export default function FAQ() {
         </div>
       </main>
 
-      {/* Footer */}
+      {/* Footerold */}
       <Footer variant="minimal" />
     </div>
   );

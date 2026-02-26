@@ -25,7 +25,7 @@ export default function BlogPost() {
 
   return (
     <div className="flex min-h-screen flex-col bg-white font-sans dark:bg-black">
-      {/* Header */}
+      {/* Headerold */}
       <Header currentPage="/blog" />
 
       {/* Main Content */}
@@ -46,7 +46,7 @@ export default function BlogPost() {
               <span>←</span> Back to Blog
             </Link>
 
-            {/* Article Header */}
+            {/* Article Headerold */}
             <article className="bg-white dark:bg-zinc-950 backdrop-blur-sm rounded-2xl p-6 sm:p-10 border-2 border-zinc-200 dark:border-zinc-800 shadow-xl mb-8">
               <div className="text-center mb-8">
                 <div className="text-7xl mb-6">{post.image}</div>
@@ -222,7 +222,7 @@ export default function BlogPost() {
         </div>
       </main>
 
-      {/* Footer */}
+      {/* Footerold */}
       <Footer variant="minimal" />
     </div>
   );

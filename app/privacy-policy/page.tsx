@@ -6,7 +6,7 @@ import { Header, Footer } from '../components';
 export default function PrivacyPolicy() {
   return (
     <div className="flex min-h-screen flex-col bg-zinc-50 font-sans dark:bg-black">
-      {/* Header */}
+      {/* Headerold */}
       <Header currentPage="/privacy-policy" />
 
       {/* Main Content */}
@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
           </div>
 
           <div className="mx-auto max-w-5xl relative">
-            {/* Header */}
+            {/* Headerold */}
             <div className="mb-8 sm:mb-12">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">Privacy Policy</h1>
               <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg">Last Updated: January 31, 2026</p>
@@ -344,7 +344,7 @@ export default function PrivacyPolicy() {
             </div>
           </section>
 
-          {/* Footer Note */}
+          {/* Footerold Note */}
           <div className="bg-zinc-100/80 dark:bg-zinc-800/80 backdrop-blur-sm rounded-2xl p-6 border border-zinc-200 dark:border-zinc-700 text-center">
             <p className="text-zinc-700 dark:text-zinc-300 text-sm">
               By using Thesiora Writer, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.
@@ -355,7 +355,7 @@ export default function PrivacyPolicy() {
         </div>
       </main>
 
-      {/* Footer */}
+      {/* Footerold */}
       <Footer variant="minimal" />
     </div>
   );
