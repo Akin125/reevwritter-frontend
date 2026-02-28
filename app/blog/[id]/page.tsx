@@ -24,47 +24,57 @@ export default function BlogPost() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-white font-sans dark:bg-black">
-      {/* Headerold */}
-      <Header currentPage="/blog" />
+    <div className="flex min-h-screen flex-col bg-black font-sans relative overflow-hidden">
+      {/* Futuristic Grid Background */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#333_1px,transparent_1px),linear-gradient(to_bottom,#333_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/20 via-black to-black"></div>
+      </div>
+
+      {/* Animated Glow Orbs */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-white/3 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1.5s'}}></div>
+      </div>
+
+      <div className="sticky top-0 z-50 backdrop-blur-lg bg-black/50 border-b border-white/10">
+        <Header currentPage="/blog" />
+      </div>
 
       {/* Main Content */}
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         <div className="relative px-4 sm:px-6 py-12 sm:py-16 overflow-hidden">
-          {/* Animated Background Grid */}
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#d4d4d420_1px,transparent_1px),linear-gradient(to_bottom,#d4d4d420_1px,transparent_1px)] bg-[size:32px_32px] dark:bg-[linear-gradient(to_right,#27272a20_1px,transparent_1px),linear-gradient(to_bottom,#27272a20_1px,transparent_1px)]"></div>
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white dark:via-black/50 dark:to-black"></div>
-          </div>
-
           <div className="mx-auto max-w-4xl relative">
             {/* Back Button */}
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 mb-8 text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors font-medium"
+              className="inline-flex items-center gap-2 mb-8 text-white/70 hover:text-white transition-colors font-medium group"
             >
-              <span>←</span> Back to Blog
+              <span className="group-hover:-translate-x-1 transition-transform">←</span> Back to Blog
             </Link>
 
-            {/* Article Headerold */}
-            <article className="bg-white dark:bg-zinc-950 backdrop-blur-sm rounded-2xl p-6 sm:p-10 border-2 border-zinc-200 dark:border-zinc-800 shadow-xl mb-8">
+            {/* Article Header */}
+            <article className="relative group">
+              <div className="absolute -inset-1 bg-white/20 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition duration-500"></div>
+
+              <div className="relative bg-zinc-900/90 backdrop-blur-xl rounded-2xl p-6 sm:p-10 border border-white/10 shadow-2xl mb-8">
               <div className="text-center mb-8">
                 <div className="text-7xl mb-6">{post.image}</div>
                 <div className="flex flex-wrap gap-2 justify-center mb-6">
                   {post.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="text-xs px-3 py-1 bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 rounded-full font-medium border border-zinc-200 dark:border-zinc-800"
+                      className="text-xs px-3 py-1 bg-white/10 text-white/70 rounded-full font-medium border border-white/20"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
                   {post.title}
                 </h1>
-                <div className="flex items-center justify-center flex-wrap gap-4 text-sm text-zinc-600 dark:text-zinc-400 mb-4">
-                  <span className="font-semibold">{post.author}</span>
+                <div className="flex items-center justify-center flex-wrap gap-4 text-sm text-white/40 mb-4">
+                  <span className="font-semibold text-white/60">{post.author}</span>
                   <span>•</span>
                   <span>{post.date}</span>
                   <span>•</span>
@@ -72,11 +82,11 @@ export default function BlogPost() {
                 </div>
               </div>
 
-              <div className="h-1 w-20 bg-black dark:bg-white rounded-full mx-auto mb-10"></div>
+              <div className="h-1 w-20 bg-white rounded-full mx-auto mb-10 shadow-lg shadow-white/30"></div>
 
               {/* Article Content */}
-              <div className="prose prose-lg dark:prose-invert max-w-none">
-                <p className="text-xl text-zinc-700 dark:text-zinc-300 leading-relaxed mb-8 font-medium">
+              <div className="prose prose-lg prose-invert max-w-none">
+                <p className="text-xl text-white/80 leading-relaxed mb-8 font-medium">
                   {post.excerpt}
                 </p>
 
@@ -85,25 +95,25 @@ export default function BlogPost() {
                   post.content.map((section, idx) => (
                     <div key={idx} className="mb-10">
                       {section.heading && (
-                        <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-4 mt-8">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 mt-8">
                           {section.heading}
                         </h2>
                       )}
                       {section.paragraphs?.map((para, pIdx) => (
-                        <p key={pIdx} className="text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4 text-lg">
+                        <p key={pIdx} className="text-white/70 leading-relaxed mb-4 text-lg">
                           {para}
                         </p>
                       ))}
                       {section.list && (
-                        <ul className="list-disc list-inside space-y-3 mb-6 text-zinc-700 dark:text-zinc-300 text-lg">
+                        <ul className="list-disc list-inside space-y-3 mb-6 text-white/70 text-lg">
                           {section.list.map((item, lIdx) => (
                             <li key={lIdx} className="ml-4">{item}</li>
                           ))}
                         </ul>
                       )}
                       {section.quote && (
-                        <blockquote className="border-l-4 border-black dark:border-white pl-6 py-4 my-6 bg-zinc-50 dark:bg-zinc-900 rounded-r-xl">
-                          <p className="text-xl italic text-zinc-700 dark:text-zinc-300 font-medium">
+                        <blockquote className="border-l-4 border-white pl-6 py-4 my-6 bg-white/5 rounded-r-xl backdrop-blur-sm">
+                          <p className="text-xl italic text-white/80 font-medium">
                             "{section.quote}"
                           </p>
                         </blockquote>
@@ -113,31 +123,31 @@ export default function BlogPost() {
                 ) : (
                   // Default content structure for posts without specific content
                   <>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-4 mt-8">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 mt-8">
                       Introduction
                     </h2>
-                    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6 text-lg">
+                    <p className="text-white/70 leading-relaxed mb-6 text-lg">
                       Welcome to this comprehensive guide on {post.title.toLowerCase()}. This article explores the key concepts, strategies, and best practices that will help you understand and implement these ideas effectively in your academic writing journey.
                     </p>
 
-                    <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-4 mt-8">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 mt-8">
                       Key Concepts
                     </h2>
-                    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6 text-lg">
+                    <p className="text-white/70 leading-relaxed mb-6 text-lg">
                       Understanding the foundational concepts is crucial for success. Our platform leverages advanced AI technology to provide you with intelligent assistance throughout your research and writing process. Each feature is designed to enhance your productivity while maintaining academic integrity.
                     </p>
 
-                    <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-4 mt-8">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 mt-8">
                       Practical Applications
                     </h2>
-                    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6 text-lg">
+                    <p className="text-white/70 leading-relaxed mb-6 text-lg">
                       Let's explore how you can apply these concepts in real-world scenarios. Whether you're working on a research paper, thesis, or dissertation, these strategies will help you work more efficiently and produce higher-quality academic content.
                     </p>
 
-                    <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-4 mt-8">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 mt-8">
                       Best Practices
                     </h2>
-                    <ul className="list-disc list-inside space-y-3 mb-6 text-zinc-700 dark:text-zinc-300 text-lg">
+                    <ul className="list-disc list-inside space-y-3 mb-6 text-white/70 text-lg">
                       <li className="ml-4">Start with a clear understanding of your research objectives</li>
                       <li className="ml-4">Use structured outlines to organize your thoughts</li>
                       <li className="ml-4">Leverage AI assistance while maintaining your unique voice</li>
@@ -145,10 +155,10 @@ export default function BlogPost() {
                       <li className="ml-4">Ensure all citations and references are accurate</li>
                     </ul>
 
-                    <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-4 mt-8">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 mt-8">
                       Conclusion
                     </h2>
-                    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6 text-lg">
+                    <p className="text-white/70 leading-relaxed mb-6 text-lg">
                       By implementing these strategies and utilizing the right tools, you can significantly improve your academic writing process. Thesiora Writer is here to support you every step of the way, from initial planning to final submission.
                     </p>
                   </>
@@ -156,24 +166,25 @@ export default function BlogPost() {
               </div>
 
               {/* Author Bio */}
-              <div className="mt-12 pt-8 border-t-2 border-zinc-200 dark:border-zinc-800">
+              <div className="mt-12 pt-8 border-t border-white/10">
                 <div className="flex items-start gap-4">
-                  <div className="w-16 h-16 rounded-full bg-zinc-100 dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-2xl">
+                  <div className="w-16 h-16 rounded-full bg-white/5 border-2 border-white/20 flex items-center justify-center text-2xl backdrop-blur-sm">
                     ✍️
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-black dark:text-white mb-2">{post.author}</h3>
-                    <p className="text-zinc-700 dark:text-zinc-300 text-sm">
+                    <h3 className="text-xl font-bold text-white mb-2">{post.author}</h3>
+                    <p className="text-white/60 text-sm">
                       Contributing writer at Thesiora Writer, specializing in academic writing, AI technology, and research methodologies.
                     </p>
                   </div>
                 </div>
               </div>
+            </div>
             </article>
 
             {/* Related Posts */}
-            <div className="bg-white dark:bg-zinc-950 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border-2 border-zinc-200 dark:border-zinc-800 shadow-xl mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-6">Related Articles</h2>
+            <div className="bg-zinc-900/80 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/10 shadow-xl mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Related Articles</h2>
               <div className="grid sm:grid-cols-2 gap-6">
                 {blogPosts
                   .filter(p => p.id !== post.id && p.category === post.category)
@@ -182,14 +193,15 @@ export default function BlogPost() {
                     <Link
                       key={relatedPost.id}
                       href={`/blog/${relatedPost.id}`}
-                      className="group"
+                      className="group relative"
                     >
-                      <div className="bg-zinc-50 dark:bg-zinc-900 rounded-xl p-6 border-2 border-zinc-200 dark:border-zinc-800 hover:border-black dark:hover:border-white transition-all">
+                      <div className="absolute -inset-0.5 bg-white/20 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-300"></div>
+                      <div className="relative bg-zinc-900/50 rounded-xl p-6 border border-white/10 hover:border-white/30 transition-all backdrop-blur-sm">
                         <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{relatedPost.image}</div>
-                        <h3 className="text-lg font-bold text-black dark:text-white mb-2 group-hover:text-zinc-600 dark:group-hover:text-zinc-400 transition-colors">
+                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-white/80 transition-colors">
                           {relatedPost.title}
                         </h3>
-                        <p className="text-sm text-zinc-600 dark:text-zinc-400">{relatedPost.readTime}</p>
+                        <p className="text-sm text-white/40">{relatedPost.readTime}</p>
                       </div>
                     </Link>
                   ))}
@@ -197,33 +209,42 @@ export default function BlogPost() {
             </div>
 
             {/* CTA */}
-            <div className="text-center bg-gradient-to-br from-zinc-100 to-zinc-50 dark:from-zinc-900 dark:to-zinc-950 rounded-2xl p-8 sm:p-10 border-2 border-zinc-200 dark:border-zinc-800 shadow-xl">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-white/20 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500"></div>
+
+              <div className="relative text-center mb-8 bg-zinc-900/90 rounded-2xl p-8 sm:p-10 border border-white/10 shadow-2xl">
               <div className="text-5xl mb-6">🚀</div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-4">Ready to Transform Your Writing?</h2>
-              <p className="text-lg text-zinc-700 dark:text-zinc-300 mb-8 max-w-2xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Ready to Transform Your Writing?</h2>
+              <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
                 Start using Thesiora Writer today and experience the future of academic writing
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link
                   href="/register"
-                  className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl transition-all hover:bg-zinc-800 dark:hover:bg-zinc-200 shadow-lg"
+                  className="relative inline-block group/btn"
                 >
-                  Get Started Free →
+                  <div className="absolute -inset-1 bg-white/30 rounded-xl blur opacity-40 group-hover/btn:opacity-70 transition duration-300"></div>
+                  <div className="relative px-8 py-4 bg-white text-black font-bold rounded-xl transition-all hover:bg-white/90">
+                    Get Started Free →
+                  </div>
                 </Link>
                 <Link
                   href="/blog"
-                  className="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-bold rounded-xl transition-all hover:bg-zinc-100 dark:hover:bg-zinc-900 border-2 border-black dark:border-white"
+                  className="px-8 py-4 bg-zinc-900/50 backdrop-blur-sm text-white font-bold rounded-xl transition-all hover:bg-zinc-800/50 border border-white/20 hover:border-white/40"
                 >
                   More Articles
                 </Link>
               </div>
             </div>
+            </div>
           </div>
         </div>
       </main>
 
-      {/* Footerold */}
-      <Footer variant="minimal" />
+      {/* Footer */}
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -59,11 +59,11 @@ export default function RegisterPage() {
 
   if (success) {
     return (
-      <div className="flex min-h-screen flex-col bg-zinc-50 dark:bg-black">
+      <div className="flex min-h-screen flex-col bg-background">
         {/* Headerold */}
-        <header className="border-b border-zinc-200 bg-white px-6 py-4 dark:border-zinc-800 dark:bg-zinc-950">
+        <header className="border-b border-border bg-card px-6 py-4 dark:border-border bg-input">
           <div className="mx-auto flex max-w-7xl items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+            <Link href="/" className="text-2xl font-bold text-foreground">
               Thesiora Writer
             </Link>
           </div>
@@ -72,19 +72,19 @@ export default function RegisterPage() {
         {/* Main Content */}
         <main className="flex flex-1 items-center justify-center px-6 py-12">
           <div className="w-full max-w-md">
-            <div className="rounded-lg border border-green-200 bg-white p-8 dark:border-green-900 dark:bg-zinc-950">
+            <div className="rounded-lg border border-green-200 bg-card p-8 dark:border-green-900 bg-input">
               <div className="mb-4 text-center">
                 <div className="mb-4 text-5xl">✓</div>
                 <h2 className="mb-2 text-2xl font-bold text-green-700 dark:text-green-400">
                   Registration Successful!
                 </h2>
-                <p className="mb-6 text-zinc-600 dark:text-zinc-400">
+                <p className="mb-6 text-muted-foreground">
                   We've sent a verification email to:
                 </p>
-                <p className="mb-6 break-all rounded-lg bg-zinc-100 p-3 font-mono text-sm dark:bg-zinc-900">
+                <p className="mb-6 break-all rounded-lg bg-secondary p-3 font-mono text-sm dark:bg-primary">
                   {successEmail}
                 </p>
-                <p className="text-zinc-600 dark:text-zinc-400">
+                <p className="text-muted-foreground">
                   Please check your email and click the verification link to activate your account.
                 </p>
               </div>
@@ -92,13 +92,13 @@ export default function RegisterPage() {
               <div className="mt-6 space-y-3">
                 <button
                   onClick={() => router.push("/")}
-                  className="w-full rounded-lg bg-zinc-900 px-4 py-2 font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                  className="w-full rounded-lg bg-primary px-4 py-2 font-medium text-primary-foreground transition-colors hover:bg-primary/90 dark:bg-secondary text-foreground dark:hover:bg-accent"
                 >
                   Back to Home
                 </button>
                 <Link
                   href="/login"
-                  className="block rounded-lg border border-zinc-300 px-4 py-2 text-center font-medium text-zinc-900 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-50 dark:hover:bg-zinc-900"
+                  className="block rounded-lg border border-input px-4 py-2 text-center font-medium text-foreground transition-colors hover:bg-secondary border-border dark:text-foreground dark:hover:bg-primary"
                 >
                   Go to Login
                 </Link>
@@ -111,17 +111,17 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-zinc-50 dark:bg-black">
+    <div className="flex min-h-screen flex-col bg-background">
       {/* Headerold */}
-      <header className="border-b border-zinc-200 bg-white px-6 py-4 dark:border-zinc-800 dark:bg-zinc-950">
+      <header className="border-b border-border bg-card px-6 py-4 dark:border-border bg-input">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          <Link href="/" className="text-2xl font-bold text-foreground">
             Thesiora Writer
           </Link>
           <nav className="flex gap-4">
             <Link
               href="/login"
-              className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+              className="text-sm font-medium text-zinc-600 transition-colors hover:text-foreground text-muted-foreground dark:hover:text-foreground"
             >
               Login
             </Link>
@@ -132,11 +132,11 @@ export default function RegisterPage() {
       {/* Main Content */}
       <main className="flex flex-1 items-center justify-center px-6 py-12">
         <div className="w-full max-w-md">
-          <div className="rounded-lg border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-950">
-            <h1 className="mb-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          <div className="rounded-lg border border-border bg-card p-8 dark:border-border bg-input">
+            <h1 className="mb-2 text-2xl font-bold text-foreground">
               Create Account
             </h1>
-            <p className="mb-6 text-zinc-600 dark:text-zinc-400">
+            <p className="mb-6 text-muted-foreground">
               Join Thesiora Writer today
             </p>
 
@@ -148,7 +148,7 @@ export default function RegisterPage() {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="full_name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                <label htmlFor="full_name" className="block text-sm font-medium text-foreground">
                   Full Name (Optional)
                 </label>
                 <input
@@ -158,13 +158,13 @@ export default function RegisterPage() {
                   value={formData.full_name}
                   onChange={handleChange}
                   disabled={loading}
-                  className="mt-1 w-full rounded-lg border border-zinc-300 px-4 py-2 text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-0 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50 dark:placeholder-zinc-600 dark:focus:border-zinc-50 dark:focus:ring-zinc-50"
+                  className="mt-1 w-full rounded-lg border border-input px-4 py-2 text-foreground placeholder-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-0 border-border dark:bg-primary dark:text-foreground dark:placeholder-muted-foreground focus:border-ring focus:ring-ring"
                   placeholder="John Doe"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                <label htmlFor="email" className="block text-sm font-medium text-foreground">
                   Email
                 </label>
                 <input
@@ -175,13 +175,13 @@ export default function RegisterPage() {
                   onChange={handleChange}
                   required
                   disabled={loading}
-                  className="mt-1 w-full rounded-lg border border-zinc-300 px-4 py-2 text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-0 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50 dark:placeholder-zinc-600 dark:focus:border-zinc-50 dark:focus:ring-zinc-50"
+                  className="mt-1 w-full rounded-lg border border-input px-4 py-2 text-foreground placeholder-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-0 border-border dark:bg-primary dark:text-foreground dark:placeholder-muted-foreground focus:border-ring focus:ring-ring"
                   placeholder="you@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="username" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                <label htmlFor="username" className="block text-sm font-medium text-foreground">
                   Username
                 </label>
                 <input
@@ -192,13 +192,13 @@ export default function RegisterPage() {
                   onChange={handleChange}
                   required
                   disabled={loading}
-                  className="mt-1 w-full rounded-lg border border-zinc-300 px-4 py-2 text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-0 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50 dark:placeholder-zinc-600 dark:focus:border-zinc-50 dark:focus:ring-zinc-50"
+                  className="mt-1 w-full rounded-lg border border-input px-4 py-2 text-foreground placeholder-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-0 border-border dark:bg-primary dark:text-foreground dark:placeholder-muted-foreground focus:border-ring focus:ring-ring"
                   placeholder="johndoe"
                 />
               </div>
 
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                <label htmlFor="password" className="block text-sm font-medium text-foreground">
                   Password
                 </label>
                 <input
@@ -209,13 +209,13 @@ export default function RegisterPage() {
                   onChange={handleChange}
                   required
                   disabled={loading}
-                  className="mt-1 w-full rounded-lg border border-zinc-300 px-4 py-2 text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-0 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50 dark:placeholder-zinc-600 dark:focus:border-zinc-50 dark:focus:ring-zinc-50"
+                  className="mt-1 w-full rounded-lg border border-input px-4 py-2 text-foreground placeholder-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-0 border-border dark:bg-primary dark:text-foreground dark:placeholder-muted-foreground focus:border-ring focus:ring-ring"
                   placeholder="••••••••"
                 />
               </div>
 
               <div>
-                <label htmlFor="password_confirm" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                <label htmlFor="password_confirm" className="block text-sm font-medium text-foreground">
                   Confirm Password
                 </label>
                 <input
@@ -226,7 +226,7 @@ export default function RegisterPage() {
                   onChange={handleChange}
                   required
                   disabled={loading}
-                  className="mt-1 w-full rounded-lg border border-zinc-300 px-4 py-2 text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-0 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50 dark:placeholder-zinc-600 dark:focus:border-zinc-50 dark:focus:ring-zinc-50"
+                  className="mt-1 w-full rounded-lg border border-input px-4 py-2 text-foreground placeholder-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-0 border-border dark:bg-primary dark:text-foreground dark:placeholder-muted-foreground focus:border-ring focus:ring-ring"
                   placeholder="••••••••"
                 />
               </div>
@@ -234,19 +234,19 @@ export default function RegisterPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-lg bg-zinc-900 px-4 py-2 font-medium text-white transition-colors hover:bg-zinc-700 disabled:opacity-50 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                className="w-full rounded-lg bg-primary px-4 py-2 font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50 dark:bg-secondary text-foreground dark:hover:bg-accent"
               >
                 {loading ? "Creating account..." : "Create Account"}
               </button>
             </form>
 
             <div className="mt-6 text-center text-sm">
-              <span className="text-zinc-600 dark:text-zinc-400">
+              <span className="text-muted-foreground">
                 Already have an account?{" "}
               </span>
               <Link
                 href="/login"
-                className="font-medium text-zinc-900 transition-colors hover:text-zinc-700 dark:text-zinc-50 dark:hover:text-zinc-300"
+                className="font-medium text-foreground transition-colors hover:text-foreground dark:text-foreground dark:hover:text-zinc-300"
               >
                 Login
               </Link>
@@ -256,8 +256,8 @@ export default function RegisterPage() {
       </main>
 
       {/* Footerold */}
-      <footer className="border-t border-zinc-200 bg-white px-6 py-8 dark:border-zinc-800 dark:bg-zinc-950">
-        <div className="mx-auto max-w-7xl text-center text-sm text-zinc-600 dark:text-zinc-400">
+      <footer className="border-t border-border bg-card px-6 py-8 dark:border-border bg-input">
+        <div className="mx-auto max-w-7xl text-center text-sm text-muted-foreground">
           <p>Thesiora Writer - AI-Powered Academic Research Paper Generator</p>
         </div>
       </footer>

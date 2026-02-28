@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -46,11 +46,11 @@ function VerifyEmailContent() {
   }, [token, router]);
 
   return (
-    <div className="flex min-h-screen flex-col bg-zinc-50 dark:bg-black">
+    <div className="flex min-h-screen flex-col bg-background">
       {/* Headerold */}
-      <header className="border-b border-zinc-200 bg-white px-6 py-4 dark:border-zinc-800 dark:bg-zinc-950">
+      <header className="border-b border-border bg-card px-6 py-4 dark:border-border bg-input">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          <Link href="/" className="text-2xl font-bold text-foreground">
             Thesiora Writer
           </Link>
         </div>
@@ -59,14 +59,14 @@ function VerifyEmailContent() {
       {/* Main Content */}
       <main className="flex flex-1 items-center justify-center px-6 py-12">
         <div className="w-full max-w-md">
-          <div className="rounded-lg border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-950">
+          <div className="rounded-lg border border-border bg-card p-8 dark:border-border bg-input">
             {loading && (
               <div className="text-center">
-                <div className="mb-4 inline-block h-8 w-8 animate-spin rounded-full border-4 border-zinc-300 border-t-zinc-900 dark:border-zinc-700 dark:border-t-zinc-50"></div>
-                <h2 className="mb-2 text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+                <div className="mb-4 inline-block h-8 w-8 animate-spin rounded-full border-4 border-input border-t-zinc-900 border-border dark:border-t-zinc-50"></div>
+                <h2 className="mb-2 text-xl font-semibold text-foreground">
                   Verifying Email
                 </h2>
-                <p className="text-zinc-600 dark:text-zinc-400">
+                <p className="text-muted-foreground">
                   Please wait while we verify your email address...
                 </p>
               </div>
@@ -78,12 +78,12 @@ function VerifyEmailContent() {
                 <h2 className="mb-2 text-xl font-semibold text-green-700 dark:text-green-400">
                   Email Verified!
                 </h2>
-                <p className="mb-6 text-zinc-600 dark:text-zinc-400">
+                <p className="mb-6 text-muted-foreground">
                   Your email has been successfully verified. Redirecting to login...
                 </p>
                 <Link
                   href="/login"
-                  className="inline-block rounded-lg bg-zinc-900 px-6 py-2 font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                  className="inline-block rounded-lg bg-primary px-6 py-2 font-medium text-primary-foreground transition-colors hover:bg-primary/90 dark:bg-secondary text-foreground dark:hover:bg-accent"
                 >
                   Go to Login
                 </Link>
@@ -96,17 +96,17 @@ function VerifyEmailContent() {
                 <h2 className="mb-2 text-xl font-semibold text-red-700 dark:text-red-400">
                   Verification Failed
                 </h2>
-                <p className="mb-6 text-zinc-600 dark:text-zinc-400">{error}</p>
+                <p className="mb-6 text-muted-foreground">{error}</p>
                 <div className="space-y-3">
                   <Link
                     href="/register"
-                    className="block rounded-lg bg-zinc-900 px-6 py-2 font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                    className="block rounded-lg bg-primary px-6 py-2 font-medium text-primary-foreground transition-colors hover:bg-primary/90 dark:bg-secondary text-foreground dark:hover:bg-accent"
                   >
                     Register Again
                   </Link>
                   <Link
                     href="/"
-                    className="block rounded-lg border border-zinc-300 px-6 py-2 font-medium text-zinc-900 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-50 dark:hover:bg-zinc-900"
+                    className="block rounded-lg border border-input px-6 py-2 font-medium text-foreground transition-colors hover:bg-secondary border-border dark:text-foreground dark:hover:bg-primary"
                   >
                     Back to Home
                   </Link>
@@ -118,8 +118,8 @@ function VerifyEmailContent() {
       </main>
 
       {/* Footerold */}
-      <footer className="border-t border-zinc-200 bg-white px-6 py-8 dark:border-zinc-800 dark:bg-zinc-950">
-        <div className="mx-auto max-w-7xl text-center text-sm text-zinc-600 dark:text-zinc-400">
+      <footer className="border-t border-border bg-card px-6 py-8 dark:border-border bg-input">
+        <div className="mx-auto max-w-7xl text-center text-sm text-muted-foreground">
           <p>Thesiora Writer - AI-Powered Academic Research Paper Generator</p>
         </div>
       </footer>

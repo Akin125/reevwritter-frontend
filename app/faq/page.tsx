@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -219,26 +219,21 @@ export default function FAQ() {
   ];
 
   return (
-    <div className="flex min-h-screen flex-col bg-white font-sans dark:bg-black">
+    <div className="flex min-h-screen flex-col bg-background font-sans">
       {/* Headerold */}
       <Header currentPage="/faq" />
 
       {/* Main Content */}
       <main className="flex-1">
         <div className="relative px-4 sm:px-6 py-12 sm:py-16 overflow-hidden">
-          {/* Animated Background Grid */}
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#d4d4d420_1px,transparent_1px),linear-gradient(to_bottom,#d4d4d420_1px,transparent_1px)] bg-[size:32px_32px] dark:bg-[linear-gradient(to_right,#27272a20_1px,transparent_1px),linear-gradient(to_bottom,#27272a20_1px,transparent_1px)]"></div>
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white dark:via-black/50 dark:to-black"></div>
-          </div>
 
           <div className="mx-auto max-w-5xl relative">
             {/* Headerold */}
             <div className="mb-12 sm:mb-16 text-center">
               <div className="text-6xl mb-6">❓</div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-4">Frequently Asked Questions</h1>
-              <p className="text-zinc-700 dark:text-zinc-300 text-base sm:text-lg max-w-3xl mx-auto">
-                Everything you need to know about Thesiora Writer - from getting started to advanced features. Can&apos;t find your answer? <Link href="/contact" className="text-black dark:text-white font-bold underline hover:no-underline">Contact us</Link>.
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-primary-foreground mb-4">Frequently Asked Questions</h1>
+              <p className="text-foreground text-base sm:text-lg max-w-3xl mx-auto">
+                Everything you need to know about Thesiora Writer - from getting started to advanced features. Can&apos;t find your answer? <Link href="/contact" className="text-black dark:text-primary-foreground font-bold underline hover:no-underline">Contact us</Link>.
               </p>
             </div>
 
@@ -248,10 +243,10 @@ export default function FAQ() {
                 <input
                   type="text"
                   placeholder="Search FAQs..."
-                  className="w-full px-6 py-4 bg-white dark:bg-zinc-950 border-2 border-zinc-300 dark:border-zinc-700 rounded-xl text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white transition-colors pl-12 font-medium"
+                  className="w-full px-6 py-4 bg-card bg-input border-2 border-border rounded-xl text-black dark:text-primary-foreground focus:outline-none focus:border-black dark:focus:border-white transition-colors pl-12 font-medium"
                 />
                 <svg
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-zinc-500 dark:text-zinc-400"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground text-muted-foreground"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -264,22 +259,22 @@ export default function FAQ() {
             {/* FAQ Categories */}
             <div className="space-y-8 sm:space-y-10">
               {faqCategories.map((category, categoryIndex) => (
-                <div key={categoryIndex} className="bg-white dark:bg-zinc-950 backdrop-blur-sm rounded-2xl p-6 sm:p-10 border-2 border-zinc-200 dark:border-zinc-800 shadow-xl">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-6 pb-4 border-b-2 border-zinc-200 dark:border-zinc-800">{category.category}</h2>
+                <div key={categoryIndex} className="bg-card bg-input backdrop-blur-sm rounded-2xl p-6 sm:p-10 border-2 border-border shadow-xl">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-primary-foreground mb-6 pb-4 border-b-2 border-border">{category.category}</h2>
                   <div className="space-y-3">
                     {category.questions.map((faq, questionIndex) => {
                       const globalIndex = categoryIndex * 100 + questionIndex;
                       const isOpen = openIndex === globalIndex;
 
                       return (
-                        <div key={questionIndex} className="border-2 border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden hover:border-black dark:hover:border-white transition-all">
+                        <div key={questionIndex} className="border-2 border-border rounded-xl overflow-hidden hover:border-black dark:hover:border-white transition-all">
                           <button
                             onClick={() => setOpenIndex(isOpen ? null : globalIndex)}
-                            className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors"
+                            className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-secondary dark:hover:bg-primary transition-colors"
                           >
-                            <span className="text-base sm:text-lg font-bold text-black dark:text-white pr-8">{faq.question}</span>
+                            <span className="text-base sm:text-lg font-bold text-black dark:text-primary-foreground pr-8">{faq.question}</span>
                             <svg
-                              className={`w-6 h-6 text-black dark:text-white flex-shrink-0 transition-transform duration-200 ${
+                              className={`w-6 h-6 text-black dark:text-primary-foreground flex-shrink-0 transition-transform duration-200 ${
                                 isOpen ? 'transform rotate-180' : ''
                               }`}
                               fill="none"
@@ -291,7 +286,7 @@ export default function FAQ() {
                             </svg>
                           </button>
                           {isOpen && (
-                            <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-2 text-zinc-700 dark:text-zinc-300 leading-relaxed bg-zinc-50 dark:bg-zinc-900 border-t-2 border-zinc-200 dark:border-zinc-800">
+                            <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-2 text-foreground leading-relaxed bg-secondary dark:bg-primary border-t-2 border-border">
                               {faq.answer}
                             </div>
                           )}
@@ -304,22 +299,22 @@ export default function FAQ() {
             </div>
 
             {/* Still Need Help */}
-            <div className="mt-12 sm:mt-16 bg-gradient-to-br from-zinc-100 to-zinc-50 dark:from-zinc-900 dark:to-zinc-950 backdrop-blur-sm rounded-2xl p-8 sm:p-10 border-2 border-zinc-200 dark:border-zinc-800 text-center shadow-xl">
+            <div className="mt-12 sm:mt-16 bg-gradient-to-br from-zinc-100 to-zinc-50 dark:from-zinc-900 dark:to-zinc-950 backdrop-blur-sm rounded-2xl p-8 sm:p-10 border-2 border-border text-center shadow-xl">
               <div className="text-5xl mb-6">💬</div>
-              <h2 className="text-2xl sm:text-4xl font-bold text-black dark:text-white mb-4">Still Have Questions?</h2>
-              <p className="text-lg sm:text-xl text-zinc-700 dark:text-zinc-300 mb-8 max-w-2xl mx-auto">
+              <h2 className="text-2xl sm:text-4xl font-bold text-black dark:text-primary-foreground mb-4">Still Have Questions?</h2>
+              <p className="text-lg sm:text-xl text-foreground mb-8 max-w-2xl mx-auto">
                 Our support team is here to help. Get in touch and we&apos;ll respond within 24 hours.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link
                   href="/contact"
-                  className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl transition-all hover:bg-zinc-800 dark:hover:bg-zinc-200 shadow-lg"
+                  className="px-8 py-4 bg-black dark:bg-card text-primary-foreground dark:text-black font-bold rounded-xl transition-all hover:bg-accent dark:hover:bg-accent shadow-lg"
                 >
                   Contact Support
                 </Link>
                 <Link
                   href="/user-guide"
-                  className="px-8 py-4 bg-white dark:bg-black text-black dark:text-white font-bold rounded-xl transition-all hover:bg-zinc-100 dark:hover:bg-zinc-900 border-2 border-black dark:border-white"
+                  className="px-8 py-4 bg-card dark:bg-black text-black dark:text-primary-foreground font-bold rounded-xl transition-all hover:bg-accent border-2 border-black dark:border-white"
                 >
                   View User Guide
                 </Link>
@@ -330,7 +325,7 @@ export default function FAQ() {
       </main>
 
       {/* Footerold */}
-      <Footer variant="minimal" />
+      <Footer />
     </div>
   );
 }

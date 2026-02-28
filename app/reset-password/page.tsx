@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -73,11 +73,11 @@ function ResetPasswordContent() {
 
   if (!tokenValid) {
     return (
-      <div className="flex min-h-screen flex-col bg-zinc-50 dark:bg-black">
+      <div className="flex min-h-screen flex-col bg-background">
         {/* Headerold */}
-        <header className="border-b border-zinc-200 bg-white px-6 py-4 dark:border-zinc-800 dark:bg-zinc-950">
+        <header className="border-b border-border bg-card px-6 py-4 dark:border-border bg-input">
           <div className="mx-auto flex max-w-7xl items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+            <Link href="/" className="text-2xl font-bold text-foreground">
               Thesiora Writer
             </Link>
           </div>
@@ -86,13 +86,13 @@ function ResetPasswordContent() {
         {/* Main Content */}
         <main className="flex flex-1 items-center justify-center px-6 py-12">
           <div className="w-full max-w-md">
-            <div className="rounded-lg border border-red-200 bg-white p-8 dark:border-red-900 dark:bg-zinc-950">
+            <div className="rounded-lg border border-red-200 bg-card p-8 dark:border-red-900 bg-input">
               <div className="mb-4 text-center">
                 <div className="mb-4 text-5xl">✗</div>
                 <h2 className="mb-2 text-xl font-semibold text-red-700 dark:text-red-400">
                   Invalid Reset Link
                 </h2>
-                <p className="mb-6 text-zinc-600 dark:text-zinc-400">
+                <p className="mb-6 text-muted-foreground">
                   {error || "This password reset link is invalid or has expired."}
                 </p>
               </div>
@@ -100,13 +100,13 @@ function ResetPasswordContent() {
               <div className="space-y-3">
                 <Link
                   href="/forgot-password"
-                  className="block rounded-lg bg-zinc-900 px-4 py-2 text-center font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                  className="block rounded-lg bg-primary px-4 py-2 text-center font-medium text-primary-foreground transition-colors hover:bg-primary/90 dark:bg-secondary text-foreground dark:hover:bg-accent"
                 >
                   Request New Link
                 </Link>
                 <Link
                   href="/login"
-                  className="block rounded-lg border border-zinc-300 px-4 py-2 text-center font-medium text-zinc-900 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-50 dark:hover:bg-zinc-900"
+                  className="block rounded-lg border border-input px-4 py-2 text-center font-medium text-foreground transition-colors hover:bg-secondary border-border dark:text-foreground dark:hover:bg-primary"
                 >
                   Back to Login
                 </Link>
@@ -116,8 +116,8 @@ function ResetPasswordContent() {
         </main>
 
         {/* Footerold */}
-        <footer className="border-t border-zinc-200 bg-white px-6 py-8 dark:border-zinc-800 dark:bg-zinc-950">
-          <div className="mx-auto max-w-7xl text-center text-sm text-zinc-600 dark:text-zinc-400">
+        <footer className="border-t border-border bg-card px-6 py-8 dark:border-border bg-input">
+          <div className="mx-auto max-w-7xl text-center text-sm text-muted-foreground">
             <p>Thesiora Writer - AI-Powered Academic Research Paper Generator</p>
           </div>
         </footer>
@@ -127,11 +127,11 @@ function ResetPasswordContent() {
 
   if (success) {
     return (
-      <div className="flex min-h-screen flex-col bg-zinc-50 dark:bg-black">
+      <div className="flex min-h-screen flex-col bg-background">
         {/* Headerold */}
-        <header className="border-b border-zinc-200 bg-white px-6 py-4 dark:border-zinc-800 dark:bg-zinc-950">
+        <header className="border-b border-border bg-card px-6 py-4 dark:border-border bg-input">
           <div className="mx-auto flex max-w-7xl items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+            <Link href="/" className="text-2xl font-bold text-foreground">
               Thesiora Writer
             </Link>
           </div>
@@ -140,20 +140,20 @@ function ResetPasswordContent() {
         {/* Main Content */}
         <main className="flex flex-1 items-center justify-center px-6 py-12">
           <div className="w-full max-w-md">
-            <div className="rounded-lg border border-green-200 bg-white p-8 dark:border-green-900 dark:bg-zinc-950">
+            <div className="rounded-lg border border-green-200 bg-card p-8 dark:border-green-900 bg-input">
               <div className="mb-4 text-center">
                 <div className="mb-4 text-5xl">✓</div>
                 <h2 className="mb-2 text-2xl font-bold text-green-700 dark:text-green-400">
                   Password Reset Successful!
                 </h2>
-                <p className="mb-6 text-zinc-600 dark:text-zinc-400">
+                <p className="mb-6 text-muted-foreground">
                   Your password has been reset. Redirecting to login...
                 </p>
               </div>
 
               <Link
                 href="/login"
-                className="block rounded-lg bg-zinc-900 px-4 py-2 text-center font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                className="block rounded-lg bg-primary px-4 py-2 text-center font-medium text-primary-foreground transition-colors hover:bg-primary/90 dark:bg-secondary text-foreground dark:hover:bg-accent"
               >
                 Go to Login
               </Link>
@@ -162,8 +162,8 @@ function ResetPasswordContent() {
         </main>
 
         {/* Footerold */}
-        <footer className="border-t border-zinc-200 bg-white px-6 py-8 dark:border-zinc-800 dark:bg-zinc-950">
-          <div className="mx-auto max-w-7xl text-center text-sm text-zinc-600 dark:text-zinc-400">
+        <footer className="border-t border-border bg-card px-6 py-8 dark:border-border bg-input">
+          <div className="mx-auto max-w-7xl text-center text-sm text-muted-foreground">
             <p>Thesiora Writer - AI-Powered Academic Research Paper Generator</p>
           </div>
         </footer>
@@ -172,11 +172,11 @@ function ResetPasswordContent() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-zinc-50 dark:bg-black">
+    <div className="flex min-h-screen flex-col bg-background">
       {/* Headerold */}
-      <header className="border-b border-zinc-200 bg-white px-6 py-4 dark:border-zinc-800 dark:bg-zinc-950">
+      <header className="border-b border-border bg-card px-6 py-4 dark:border-border bg-input">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          <Link href="/" className="text-2xl font-bold text-foreground">
             Thesiora Writer
           </Link>
         </div>
@@ -185,11 +185,11 @@ function ResetPasswordContent() {
       {/* Main Content */}
       <main className="flex flex-1 items-center justify-center px-6 py-12">
         <div className="w-full max-w-md">
-          <div className="rounded-lg border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-950">
-            <h1 className="mb-2 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+          <div className="rounded-lg border border-border bg-card p-8 dark:border-border bg-input">
+            <h1 className="mb-2 text-2xl font-bold text-foreground">
               Reset Password
             </h1>
-            <p className="mb-6 text-zinc-600 dark:text-zinc-400">
+            <p className="mb-6 text-muted-foreground">
               Enter your new password below
             </p>
 
@@ -201,7 +201,7 @@ function ResetPasswordContent() {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                <label htmlFor="password" className="block text-sm font-medium text-foreground">
                   New Password
                 </label>
                 <input
@@ -211,16 +211,16 @@ function ResetPasswordContent() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   disabled={loading}
-                  className="mt-1 w-full rounded-lg border border-zinc-300 px-4 py-2 text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-0 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50 dark:placeholder-zinc-600 dark:focus:border-zinc-50 dark:focus:ring-zinc-50"
+                  className="mt-1 w-full rounded-lg border border-input px-4 py-2 text-foreground placeholder-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-0 border-border dark:bg-primary dark:text-foreground dark:placeholder-muted-foreground focus:border-ring focus:ring-ring"
                   placeholder="••••••••"
                 />
-                <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+                <p className="mt-1 text-xs text-muted-foreground text-muted-foreground">
                   Must be at least 8 characters long
                 </p>
               </div>
 
               <div>
-                <label htmlFor="password_confirm" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                <label htmlFor="password_confirm" className="block text-sm font-medium text-foreground">
                   Confirm Password
                 </label>
                 <input
@@ -230,7 +230,7 @@ function ResetPasswordContent() {
                   onChange={(e) => setPasswordConfirm(e.target.value)}
                   required
                   disabled={loading}
-                  className="mt-1 w-full rounded-lg border border-zinc-300 px-4 py-2 text-zinc-900 placeholder-zinc-400 focus:border-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-0 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50 dark:placeholder-zinc-600 dark:focus:border-zinc-50 dark:focus:ring-zinc-50"
+                  className="mt-1 w-full rounded-lg border border-input px-4 py-2 text-foreground placeholder-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-0 border-border dark:bg-primary dark:text-foreground dark:placeholder-muted-foreground focus:border-ring focus:ring-ring"
                   placeholder="••••••••"
                 />
               </div>
@@ -238,7 +238,7 @@ function ResetPasswordContent() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-lg bg-zinc-900 px-4 py-2 font-medium text-white transition-colors hover:bg-zinc-700 disabled:opacity-50 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                className="w-full rounded-lg bg-primary px-4 py-2 font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-50 dark:bg-secondary text-foreground dark:hover:bg-accent"
               >
                 {loading ? "Resetting..." : "Reset Password"}
               </button>
@@ -246,23 +246,23 @@ function ResetPasswordContent() {
 
             <div className="mt-6 space-y-3 text-center text-sm">
               <div>
-                <span className="text-zinc-600 dark:text-zinc-400">
+                <span className="text-muted-foreground">
                   Remember your password?{" "}
                 </span>
                 <Link
                   href="/login"
-                  className="font-medium text-zinc-900 transition-colors hover:text-zinc-700 dark:text-zinc-50 dark:hover:text-zinc-300"
+                  className="font-medium text-foreground transition-colors hover:text-foreground dark:text-foreground dark:hover:text-zinc-300"
                 >
                   Login
                 </Link>
               </div>
               <div>
-                <span className="text-zinc-600 dark:text-zinc-400">
+                <span className="text-muted-foreground">
                   Need help?{" "}
                 </span>
                 <Link
                   href="/forgot-password"
-                  className="font-medium text-zinc-900 transition-colors hover:text-zinc-700 dark:text-zinc-50 dark:hover:text-zinc-300"
+                  className="font-medium text-foreground transition-colors hover:text-foreground dark:text-foreground dark:hover:text-zinc-300"
                 >
                   Request new link
                 </Link>
@@ -273,8 +273,8 @@ function ResetPasswordContent() {
       </main>
 
       {/* Footerold */}
-      <footer className="border-t border-zinc-200 bg-white px-6 py-8 dark:border-zinc-800 dark:bg-zinc-950">
-        <div className="mx-auto max-w-7xl text-center text-sm text-zinc-600 dark:text-zinc-400">
+      <footer className="border-t border-border bg-card px-6 py-8 dark:border-border bg-input">
+        <div className="mx-auto max-w-7xl text-center text-sm text-muted-foreground">
           <p>Thesiora Writer - AI-Powered Academic Research Paper Generator</p>
         </div>
       </footer>

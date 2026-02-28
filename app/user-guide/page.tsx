@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -369,24 +369,19 @@ export default function UserGuide() {
     const currentContent = sectionContent[activeSection];
 
     return (
-        <div className="flex min-h-screen flex-col bg-white font-sans dark:bg-black">
+        <div className="flex min-h-screen flex-col bg-background font-sans">
             {/* Headerold */}
             <Header currentPage="/user-guide" />
 
             {/* Main Content */}
             <main className="flex-1">
                 <div className="relative px-4 sm:px-6 py-12 sm:py-16 overflow-hidden">
-                    {/* Animated Background Grid */}
-                    <div className="absolute inset-0 -z-10">
-                        <div className="absolute inset-0 bg-[linear-gradient(to_right,#d4d4d420_1px,transparent_1px),linear-gradient(to_bottom,#d4d4d420_1px,transparent_1px)] bg-[size:32px_32px] dark:bg-[linear-gradient(to_right,#27272a20_1px,transparent_1px),linear-gradient(to_bottom,#27272a20_1px,transparent_1px)]"></div>
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white dark:via-black/50 dark:to-black"></div>
-                    </div>
 
                     <div className="mx-auto max-w-7xl relative">
                         {/* Headerold */}
                         <div className="mb-12 sm:mb-16 text-center">
-                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-4">User Guide</h1>
-                            <p className="text-zinc-700 dark:text-zinc-300 text-base sm:text-lg max-w-3xl mx-auto">
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-primary-foreground mb-4">User Guide</h1>
+                            <p className="text-foreground text-base sm:text-lg max-w-3xl mx-auto">
                                 Complete guide to using Thesiora Writer - from creating your first project to advanced features
                             </p>
                         </div>
@@ -394,8 +389,8 @@ export default function UserGuide() {
                         <div className="grid lg:grid-cols-4 gap-8">
                             {/* Sidebar Navigation */}
                             <div className="lg:col-span-1">
-                                <div className="bg-white dark:bg-zinc-950 backdrop-blur-sm rounded-2xl p-6 border-2 border-zinc-200 dark:border-zinc-800 shadow-xl sticky top-24">
-                                    <h3 className="text-xl font-bold text-black dark:text-white mb-6 pb-4 border-b-2 border-zinc-200 dark:border-zinc-800">Contents</h3>
+                                <div className="bg-card bg-input backdrop-blur-sm rounded-2xl p-6 border-2 border-border shadow-xl sticky top-24">
+                                    <h3 className="text-xl font-bold text-black dark:text-primary-foreground mb-6 pb-4 border-b-2 border-border">Contents</h3>
                                     <nav className="space-y-1">
                                         {sections.map((section) => (
                                             <button
@@ -403,8 +398,8 @@ export default function UserGuide() {
                                                 onClick={() => setActiveSection(section.id)}
                                                 className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-200 font-medium ${
                                                     activeSection === section.id
-                                                        ? 'bg-black text-white dark:bg-white dark:text-black shadow-lg scale-105'
-                                                        : 'text-zinc-700 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-black dark:hover:text-white'
+                                                        ? 'bg-black text-primary-foreground dark:bg-card dark:text-black shadow-lg scale-105'
+                                                        : 'text-foreground text-muted-foreground hover:bg-accent hover:text-black dark:hover:text-primary-foreground'
                                                 }`}
                                             >
                                                 <span className="mr-3 text-lg">{section.icon}</span>
@@ -420,22 +415,22 @@ export default function UserGuide() {
                                 {currentContent && (
                                     <>
                                         {/* Main Content Card */}
-                                        <div className="bg-white dark:bg-zinc-950 backdrop-blur-sm rounded-2xl p-6 sm:p-10 border-2 border-zinc-200 dark:border-zinc-800 shadow-xl">
+                                        <div className="bg-card bg-input backdrop-blur-sm rounded-2xl p-6 sm:p-10 border-2 border-border shadow-xl">
                                             <div className="mb-8">
-                                                <h2 className="text-3xl sm:text-4xl font-bold text-black dark:text-white mb-3 flex items-center gap-3">
+                                                <h2 className="text-3xl sm:text-4xl font-bold text-black dark:text-primary-foreground mb-3 flex items-center gap-3">
                                                     <span className="text-4xl">{currentContent.icon}</span>
                                                     {currentContent.title}
                                                 </h2>
-                                                <div className="h-1 w-20 bg-black dark:bg-white rounded-full"></div>
+                                                <div className="h-1 w-20 bg-black dark:bg-card rounded-full"></div>
                                             </div>
 
                                             <div className="space-y-8">
                                                 {currentContent.content.map((section, idx) => (
                                                     <div key={idx} className="space-y-4">
-                                                        <h3 className="text-xl sm:text-2xl font-bold text-black dark:text-white">
+                                                        <h3 className="text-xl sm:text-2xl font-bold text-black dark:text-primary-foreground">
                                                             {section.heading}
                                                         </h3>
-                                                        <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed text-base">
+                                                        <p className="text-foreground leading-relaxed text-base">
                                                             {section.text}
                                                         </p>
 
@@ -444,10 +439,10 @@ export default function UserGuide() {
                                                             <div className="mt-4 space-y-3">
                                                                 {section.steps.map((step, stepIdx) => (
                                                                     <div key={stepIdx} className="flex gap-4 items-start group">
-                                                                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center font-bold text-sm group-hover:scale-110 transition-transform">
+                                                                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-black dark:bg-card text-primary-foreground dark:text-black flex items-center justify-center font-bold text-sm group-hover:scale-110 transition-transform">
                                                                             {stepIdx + 1}
                                                                         </div>
-                                                                        <p className="text-zinc-700 dark:text-zinc-300 pt-1 flex-1">
+                                                                        <p className="text-foreground pt-1 flex-1">
                                                                             {step}
                                                                         </p>
                                                                     </div>
@@ -461,10 +456,10 @@ export default function UserGuide() {
                                                                 {section.features.map((feature, featureIdx) => (
                                                                     <div
                                                                         key={featureIdx}
-                                                                        className="flex gap-3 items-start p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-black dark:hover:border-white transition-colors"
+                                                                        className="flex gap-3 items-start p-4 rounded-xl bg-secondary dark:bg-primary border border-border hover:border-black dark:hover:border-white transition-colors"
                                                                     >
-                                                                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-black dark:bg-white mt-2"></div>
-                                                                        <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                                                                        <div className="flex-shrink-0 w-2 h-2 rounded-full bg-black dark:bg-card mt-2"></div>
+                                                                        <p className="text-sm text-foreground">
                                                                             {feature}
                                                                         </p>
                                                                     </div>
@@ -474,15 +469,15 @@ export default function UserGuide() {
 
                                                         {/* Tips */}
                                                         {section.tips && section.tips.length > 0 && (
-                                                            <div className="mt-6 p-6 bg-zinc-50 dark:bg-zinc-900 rounded-xl border-2 border-zinc-200 dark:border-zinc-800">
+                                                            <div className="mt-6 p-6 bg-secondary dark:bg-primary rounded-xl border-2 border-border">
                                                                 <div className="flex items-center gap-2 mb-4">
                                                                     <span className="text-2xl">💡</span>
-                                                                    <h4 className="text-lg font-bold text-black dark:text-white">Pro Tips</h4>
+                                                                    <h4 className="text-lg font-bold text-black dark:text-primary-foreground">Pro Tips</h4>
                                                                 </div>
                                                                 <ul className="space-y-2">
                                                                     {section.tips.map((tip, tipIdx) => (
-                                                                        <li key={tipIdx} className="flex gap-3 items-start text-sm text-zinc-700 dark:text-zinc-300">
-                                                                            <span className="text-black dark:text-white font-bold">•</span>
+                                                                        <li key={tipIdx} className="flex gap-3 items-start text-sm text-foreground">
+                                                                            <span className="text-black dark:text-primary-foreground font-bold">•</span>
                                                                             {tip}
                                                                         </li>
                                                                     ))}
@@ -495,7 +490,7 @@ export default function UserGuide() {
                                         </div>
 
                                         {/* Quick Navigation */}
-                                        <div className="bg-zinc-50 dark:bg-zinc-950 rounded-2xl p-6 border-2 border-zinc-200 dark:border-zinc-800">
+                                        <div className="bg-secondary bg-input rounded-2xl p-6 border-2 border-border">
                                             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                                                 <button
                                                     onClick={() => {
@@ -505,7 +500,7 @@ export default function UserGuide() {
                                                         }
                                                     }}
                                                     disabled={sections.findIndex(s => s.id === activeSection) === 0}
-                                                    className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-white dark:bg-black border-2 border-zinc-200 dark:border-zinc-800 text-black dark:text-white hover:border-black dark:hover:border-white"
+                                                    className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-card dark:bg-black border-2 border-border text-black dark:text-primary-foreground hover:border-black dark:hover:border-white"
                                                 >
                                                     <span>←</span> Previous Section
                                                 </button>
@@ -517,7 +512,7 @@ export default function UserGuide() {
                                                         }
                                                     }}
                                                     disabled={sections.findIndex(s => s.id === activeSection) === sections.length - 1}
-                                                    className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-black dark:bg-white text-white dark:text-black hover:bg-zinc-800 dark:hover:bg-zinc-200"
+                                                    className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-black dark:bg-card text-primary-foreground dark:text-black hover:bg-accent dark:hover:bg-accent"
                                                 >
                                                     Next Section <span>→</span>
                                                 </button>
@@ -527,14 +522,14 @@ export default function UserGuide() {
                                 )}
 
                                 {/* Help Section */}
-                                <div className="bg-gradient-to-br from-zinc-100 to-zinc-50 dark:from-zinc-900 dark:to-zinc-950 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border-2 border-zinc-200 dark:border-zinc-800 text-center shadow-xl">
-                                    <h3 className="text-2xl sm:text-3xl font-bold text-black dark:text-white mb-4">Need More Help?</h3>
-                                    <p className="text-zinc-700 dark:text-zinc-300 mb-6 text-lg">Check our FAQ or contact support for personalized assistance</p>
+                                <div className="bg-gradient-to-br from-zinc-100 to-zinc-50 dark:from-zinc-900 dark:to-zinc-950 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border-2 border-border text-center shadow-xl">
+                                    <h3 className="text-2xl sm:text-3xl font-bold text-black dark:text-primary-foreground mb-4">Need More Help?</h3>
+                                    <p className="text-foreground mb-6 text-lg">Check our FAQ or contact support for personalized assistance</p>
                                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                                        <Link href="/faq" className="px-8 py-4 bg-white dark:bg-black border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black text-black dark:text-white font-bold rounded-xl transition-all">
+                                        <Link href="/faq" className="px-8 py-4 bg-card dark:bg-black border-2 border-black dark:border-white hover:bg-black hover:text-primary-foreground dark:hover:bg-card dark:hover:text-black text-black dark:text-primary-foreground font-bold rounded-xl transition-all">
                                             View FAQ
                                         </Link>
-                                        <Link href="/contact" className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl transition-all hover:bg-zinc-800 dark:hover:bg-zinc-200 border-2 border-black dark:border-white">
+                                        <Link href="/contact" className="px-8 py-4 bg-black dark:bg-card text-primary-foreground dark:text-black font-bold rounded-xl transition-all hover:bg-accent dark:hover:bg-accent border-2 border-black dark:border-white">
                                             Contact Support
                                         </Link>
                                     </div>
@@ -546,7 +541,7 @@ export default function UserGuide() {
             </main>
 
             {/* Footerold */}
-            <Footer variant="minimal" />
+            <Footer />
         </div>
     );
 }

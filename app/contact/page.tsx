@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -29,32 +29,27 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex min-h-screen flex-col bg-background font-sans">
       {/* Headerold */}
       <Header currentPage="/contact" />
 
       {/* Main Content */}
       <main className="flex-1">
         <div className="relative px-4 sm:px-6 py-12 sm:py-16 lg:py-20 overflow-hidden">
-          {/* Animated Background Grid */}
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-50/50 to-zinc-50 dark:via-black/50 dark:to-black"></div>
-          </div>
 
           <div className="mx-auto max-w-6xl relative">
             {/* Headerold */}
             <div className="text-center mb-12 sm:mb-16">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">Contact Us</h1>
-              <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">Contact Us</h1>
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
                 Have questions? Need support? Want to share feedback? We&apos;re here to help and would love to hear from you.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
               {/* Contact Form */}
-              <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 shadow-lg">
-                <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-6">Send us a Message</h2>
+              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border shadow-lg">
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Send us a Message</h2>
 
                 {submitted && (
                   <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg">
@@ -64,7 +59,7 @@ export default function ContactUs() {
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label htmlFor="name" className="block text-zinc-700 dark:text-zinc-300 mb-2 font-medium text-sm">
+                    <label htmlFor="name" className="block text-foreground mb-2 font-medium text-sm">
                       Full Name *
                     </label>
                     <input
@@ -74,13 +69,13 @@ export default function ContactUs() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-50 transition-all"
+                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
                       placeholder="John Doe"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-zinc-700 dark:text-zinc-300 mb-2 font-medium text-sm">
+                    <label htmlFor="email" className="block text-foreground mb-2 font-medium text-sm">
                       Email Address *
                     </label>
                     <input
@@ -90,13 +85,13 @@ export default function ContactUs() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-50 transition-all"
+                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
                       placeholder="john@example.com"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="category" className="block text-zinc-700 dark:text-zinc-300 mb-2 font-medium text-sm">
+                    <label htmlFor="category" className="block text-foreground mb-2 font-medium text-sm">
                       Category *
                     </label>
                     <select
@@ -105,7 +100,7 @@ export default function ContactUs() {
                       value={formData.category}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-50 transition-all"
+                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
                     >
                       <option value="general">General Inquiry</option>
                       <option value="support">Technical Support</option>
@@ -119,7 +114,7 @@ export default function ContactUs() {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-zinc-700 dark:text-zinc-300 mb-2 font-medium text-sm">
+                    <label htmlFor="subject" className="block text-foreground mb-2 font-medium text-sm">
                       Subject *
                     </label>
                     <input
@@ -129,13 +124,13 @@ export default function ContactUs() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-50 transition-all"
+                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
                       placeholder="How can we help?"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-zinc-700 dark:text-zinc-300 mb-2 font-medium text-sm">
+                    <label htmlFor="message" className="block text-foreground mb-2 font-medium text-sm">
                       Message *
                     </label>
                     <textarea
@@ -145,14 +140,14 @@ export default function ContactUs() {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 bg-zinc-50 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 rounded-lg text-zinc-900 dark:text-zinc-50 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-50 transition-all resize-none"
+                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all resize-none"
                       placeholder="Tell us more about your inquiry..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full px-8 py-4 bg-zinc-900 hover:bg-zinc-700 dark:bg-zinc-50 dark:hover:bg-zinc-200 text-white dark:text-zinc-900 font-semibold rounded-full transition-colors duration-200"
+                    className="w-full px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full transition-colors duration-200"
                   >
                     Send Message
                   </button>
@@ -162,50 +157,50 @@ export default function ContactUs() {
               {/* Contact Information */}
               <div className="space-y-6 lg:space-y-8">
                 {/* Direct Contact */}
-                <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 shadow-lg">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-6">Get in Touch</h2>
+                <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border shadow-lg">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Get in Touch</h2>
 
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg className="w-6 h-6 text-zinc-600 dark:text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50 mb-1">Email Support</h3>
-                        <p className="text-zinc-600 dark:text-zinc-400 mb-2 text-sm">We typically respond within 24 hours</p>
-                        <a href="mailto:support@thesiorawriter.com" className="text-zinc-900 dark:text-zinc-50 hover:underline font-medium text-sm">
+                        <h3 className="text-lg font-semibold text-foreground mb-1">Email Support</h3>
+                        <p className="text-muted-foreground mb-2 text-sm">We typically respond within 24 hours</p>
+                        <a href="mailto:support@thesiorawriter.com" className="text-foreground hover:underline font-medium text-sm">
                           support@thesiorawriter.com
                         </a>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg className="w-6 h-6 text-zinc-600 dark:text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50 mb-1">Live Chat</h3>
-                        <p className="text-zinc-600 dark:text-zinc-400 mb-2 text-sm">Available Mon-Fri, 9AM-6PM EST</p>
-                        <button className="text-zinc-900 dark:text-zinc-50 hover:underline font-medium text-sm">
+                        <h3 className="text-lg font-semibold text-foreground mb-1">Live Chat</h3>
+                        <p className="text-muted-foreground mb-2 text-sm">Available Mon-Fri, 9AM-6PM EST</p>
+                        <button className="text-foreground hover:underline font-medium text-sm">
                           Start Chat →
                         </button>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg className="w-6 h-6 text-zinc-600 dark:text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg className="w-6 h-6 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50 mb-1">Help Center</h3>
-                        <p className="text-zinc-600 dark:text-zinc-400 mb-2 text-sm">Browse FAQs and documentation</p>
-                        <Link href="/user-guide" className="text-zinc-900 dark:text-zinc-50 hover:underline font-medium text-sm">
+                        <h3 className="text-lg font-semibold text-foreground mb-1">Help Center</h3>
+                        <p className="text-muted-foreground mb-2 text-sm">Browse FAQs and documentation</p>
+                        <Link href="/user-guide" className="text-foreground hover:underline font-medium text-sm">
                           Visit Help Center →
                         </Link>
                       </div>
@@ -214,41 +209,41 @@ export default function ContactUs() {
                 </div>
 
                 {/* Department Contact */}
-                <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 shadow-lg">
-                  <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-6">Department Contacts</h2>
+                <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border shadow-lg">
+                  <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">Department Contacts</h2>
 
-                  <div className="space-y-4 text-zinc-600 dark:text-zinc-400">
+                  <div className="space-y-4 text-muted-foreground">
                     <div>
-                      <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-1">Sales & Enterprise</h3>
-                      <a href="mailto:sales@thesiorawriter.com" className="text-zinc-700 dark:text-zinc-300 hover:underline text-sm">
+                      <h3 className="font-semibold text-foreground mb-1">Sales & Enterprise</h3>
+                      <a href="mailto:sales@thesiorawriter.com" className="text-foreground hover:underline text-sm">
                         sales@thesiorawriter.com
                       </a>
                     </div>
 
                     <div>
-                      <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-1">Billing & Subscriptions</h3>
-                      <a href="mailto:billing@thesiorawriter.com" className="text-zinc-700 dark:text-zinc-300 hover:underline text-sm">
+                      <h3 className="font-semibold text-foreground mb-1">Billing & Subscriptions</h3>
+                      <a href="mailto:billing@thesiorawriter.com" className="text-foreground hover:underline text-sm">
                         billing@thesiorawriter.com
                       </a>
                     </div>
 
                     <div>
-                      <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-1">Privacy & Data Protection</h3>
-                      <a href="mailto:privacy@thesiorawriter.com" className="text-zinc-700 dark:text-zinc-300 hover:underline text-sm">
+                      <h3 className="font-semibold text-foreground mb-1">Privacy & Data Protection</h3>
+                      <a href="mailto:privacy@thesiorawriter.com" className="text-foreground hover:underline text-sm">
                         privacy@thesiorawriter.com
                       </a>
                     </div>
 
                     <div>
-                      <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-1">Legal & Compliance</h3>
-                      <a href="mailto:legal@thesiorawriter.com" className="text-zinc-700 dark:text-zinc-300 hover:underline text-sm">
+                      <h3 className="font-semibold text-foreground mb-1">Legal & Compliance</h3>
+                      <a href="mailto:legal@thesiorawriter.com" className="text-foreground hover:underline text-sm">
                         legal@thesiorawriter.com
                       </a>
                     </div>
 
                     <div>
-                      <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-1">Partnerships</h3>
-                      <a href="mailto:partnerships@thesiorawriter.com" className="text-zinc-700 dark:text-zinc-300 hover:underline text-sm">
+                      <h3 className="font-semibold text-foreground mb-1">Partnerships</h3>
+                      <a href="mailto:partnerships@thesiorawriter.com" className="text-foreground hover:underline text-sm">
                         partnerships@thesiorawriter.com
                       </a>
                     </div>
@@ -256,24 +251,24 @@ export default function ContactUs() {
                 </div>
 
                 {/* Support Hours */}
-                <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 shadow-lg">
-                  <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-6">Support Hours</h2>
+                <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border shadow-lg">
+                  <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">Support Hours</h2>
 
-                  <div className="space-y-3 text-zinc-600 dark:text-zinc-400">
+                  <div className="space-y-3 text-muted-foreground">
                     <div className="flex justify-between items-center">
                       <span className="text-sm">Monday - Friday</span>
-                      <span className="text-zinc-900 dark:text-zinc-50 font-semibold text-sm">9:00 AM - 6:00 PM EST</span>
+                      <span className="text-foreground font-semibold text-sm">9:00 AM - 6:00 PM EST</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm">Saturday</span>
-                      <span className="text-zinc-900 dark:text-zinc-50 font-semibold text-sm">10:00 AM - 4:00 PM EST</span>
+                      <span className="text-foreground font-semibold text-sm">10:00 AM - 4:00 PM EST</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-sm">Sunday</span>
-                      <span className="text-zinc-500 dark:text-zinc-600 text-sm">Closed</span>
+                      <span className="text-muted-foreground text-sm">Closed</span>
                     </div>
-                    <div className="pt-4 border-t border-zinc-200 dark:border-zinc-700">
-                      <p className="text-xs text-zinc-600 dark:text-zinc-400">
+                    <div className="pt-4 border-t border-border">
+                      <p className="text-xs text-muted-foreground">
                         Emergency support available 24/7 for Enterprise customers
                       </p>
                     </div>
@@ -286,7 +281,7 @@ export default function ContactUs() {
       </main>
 
       {/* Footerold */}
-      <Footer variant="minimal" />
+      <Footer />
     </div>
   );
 }

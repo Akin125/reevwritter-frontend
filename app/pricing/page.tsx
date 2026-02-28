@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Header, Footer } from '../components';
@@ -124,35 +124,30 @@ export default function Pricing() {
   ];
 
   return (
-    <div className="flex min-h-screen flex-col bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex min-h-screen flex-col bg-background font-sans">
       {/* Headerold */}
       <Header currentPage="/pricing" />
 
       {/* Main Content */}
       <main className="flex-1">
         <div className="relative px-4 sm:px-6 py-12 sm:py-16 overflow-hidden">
-          {/* Animated Background Grid */}
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-50/50 to-zinc-50 dark:via-black/50 dark:to-black"></div>
-          </div>
 
           <div className="mx-auto max-w-7xl relative">
             {/* Headerold */}
             <div className="text-center mb-12 sm:mb-16">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">Choose Your Plan</h1>
-              <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto mb-8">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">Choose Your Plan</h1>
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Transparent pricing for AI-powered academic writing assistance. All plans include human-in-the-loop controls and authorship preservation.
           </p>
 
           {/* Billing Toggle */}
-          <div className="inline-flex items-center bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-lg p-1 border border-zinc-200 dark:border-zinc-800 shadow-lg">
+          <div className="inline-flex items-center bg-card/80 backdrop-blur-sm rounded-lg p-1 border border-border shadow-lg">
             <button
               onClick={() => setBillingCycle('monthly')}
               className={`px-6 py-2 rounded-md font-medium transition-colors ${
                 billingCycle === 'monthly'
-                  ? 'bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900'
-                  : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50'
+                  ? 'bg-primary dark:bg-secondary text-primary-foreground text-foreground'
+                  : 'text-muted-foreground hover:text-foreground dark:hover:text-foreground'
               }`}
             >
               Monthly
@@ -161,8 +156,8 @@ export default function Pricing() {
               onClick={() => setBillingCycle('annual')}
               className={`px-6 py-2 rounded-md font-medium transition-colors ${
                 billingCycle === 'annual'
-                  ? 'bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900'
-                  : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50'
+                  ? 'bg-primary dark:bg-secondary text-primary-foreground text-foreground'
+                  : 'text-muted-foreground hover:text-foreground dark:hover:text-foreground'
               }`}
             >
               Annual
@@ -176,31 +171,31 @@ export default function Pricing() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-2xl p-8 border ${
+              className={`relative bg-card/80 backdrop-blur-sm rounded-2xl p-8 border ${
                 plan.highlighted
                   ? 'border-zinc-900 dark:border-zinc-50 shadow-lg shadow-zinc-900/20 dark:shadow-zinc-50/20'
-                  : 'border-zinc-200 dark:border-zinc-800'
+                  : 'border-border'
               } shadow-lg`}
             >
               {plan.badge && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 px-4 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-primary dark:bg-secondary text-primary-foreground text-foreground px-4 py-1 rounded-full text-sm font-semibold">
                     {plan.badge}
                   </span>
                 </div>
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">{plan.name}</h3>
-                <p className="text-zinc-600 dark:text-zinc-400 mb-6">{plan.description}</p>
+                <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
+                <p className="text-muted-foreground mb-6">{plan.description}</p>
                 <div className="flex items-baseline justify-center mb-2">
-                  <span className="text-5xl font-bold text-zinc-900 dark:text-zinc-50">
+                  <span className="text-5xl font-bold text-foreground">
                     ${billingCycle === 'monthly' ? plan.price.monthly : Math.floor(plan.price.annual / 12)}
                   </span>
-                  <span className="text-zinc-600 dark:text-zinc-400 ml-2">/month</span>
+                  <span className="text-muted-foreground ml-2">/month</span>
                 </div>
                 {billingCycle === 'annual' && plan.price.annual > 0 && (
-                  <p className="text-sm text-zinc-500 dark:text-zinc-500">
+                  <p className="text-sm text-muted-foreground dark:text-muted-foreground">
                     ${plan.price.annual} billed annually
                   </p>
                 )}
@@ -209,8 +204,8 @@ export default function Pricing() {
               <button
                 className={`w-full py-3 rounded-lg font-semibold mb-6 transition-colors ${
                   plan.highlighted
-                    ? 'bg-zinc-900 hover:bg-zinc-700 dark:bg-zinc-50 dark:hover:bg-zinc-200 text-white dark:text-zinc-900'
-                    : 'bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-900 dark:text-zinc-50'
+                    ? 'bg-primary hover:bg-primary/90 text-primary-foreground'
+                    : 'bg-secondary hover:bg-accent dark:bg-zinc-800 dark:hover:bg-primary/90 text-foreground'
                 }`}
               >
                 {plan.cta}
@@ -218,10 +213,10 @@ export default function Pricing() {
 
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-3">Includes:</h4>
+                  <h4 className="font-semibold text-foreground mb-3">Includes:</h4>
                   <ul className="space-y-2">
                     {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start text-zinc-700 dark:text-zinc-300 text-sm">
+                      <li key={idx} className="flex items-start text-foreground text-sm">
                         <svg
                           className="w-5 h-5 text-green-500 dark:text-green-400 mr-2 flex-shrink-0"
                           fill="none"
@@ -242,13 +237,13 @@ export default function Pricing() {
                 </div>
 
                 {plan.limitations.length > 0 && (
-                  <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800">
-                    <h4 className="font-semibold text-zinc-600 dark:text-zinc-400 mb-3 text-sm">Limitations:</h4>
+                  <div className="pt-4 border-t border-border">
+                    <h4 className="font-semibold text-muted-foreground mb-3 text-sm">Limitations:</h4>
                     <ul className="space-y-2">
                       {plan.limitations.map((limitation, idx) => (
-                        <li key={idx} className="flex items-start text-zinc-500 dark:text-zinc-500 text-sm">
+                        <li key={idx} className="flex items-start text-muted-foreground dark:text-muted-foreground text-sm">
                           <svg
-                            className="w-5 h-5 text-zinc-400 dark:text-zinc-600 mr-2 flex-shrink-0"
+                            className="w-5 h-5 text-zinc-400 text-muted-foreground mr-2 flex-shrink-0"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -272,84 +267,84 @@ export default function Pricing() {
         </div>
 
         {/* Add-ons */}
-        <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 shadow-lg mb-16">
-          <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-6 text-center">Add-ons & Extensions</h2>
+        <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border shadow-lg mb-16">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 text-center">Add-ons & Extensions</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {addOns.map((addon) => (
-              <div key={addon.name} className="bg-zinc-100/80 dark:bg-zinc-800/80 rounded-lg p-6 border border-zinc-200 dark:border-zinc-700">
+              <div key={addon.name} className="bg-secondary/80 dark:bg-zinc-800/80 rounded-lg p-6 border border-border border-border">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-50">{addon.name}</h3>
-                  <span className="text-zinc-900 dark:text-zinc-50 font-semibold">{addon.price}</span>
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground">{addon.name}</h3>
+                  <span className="text-foreground font-semibold">{addon.price}</span>
                 </div>
-                <p className="text-zinc-600 dark:text-zinc-400">{addon.description}</p>
+                <p className="text-muted-foreground">{addon.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Comparison Table */}
-        <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 shadow-lg mb-16">
-          <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-8 text-center">Feature Comparison</h2>
+        <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border shadow-lg mb-16">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 text-center">Feature Comparison</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
-                <tr className="border-b border-zinc-200 dark:border-zinc-700">
-                  <th className="py-4 px-4 text-zinc-700 dark:text-zinc-300">Feature</th>
-                  <th className="py-4 px-4 text-center text-zinc-900 dark:text-zinc-50">Free</th>
-                  <th className="py-4 px-4 text-center text-zinc-900 dark:text-zinc-50">Pro</th>
-                  <th className="py-4 px-4 text-center text-zinc-900 dark:text-zinc-50">Enterprise</th>
+                <tr className="border-b border-border border-border">
+                  <th className="py-4 px-4 text-foreground">Feature</th>
+                  <th className="py-4 px-4 text-center text-foreground">Free</th>
+                  <th className="py-4 px-4 text-center text-foreground">Pro</th>
+                  <th className="py-4 px-4 text-center text-foreground">Enterprise</th>
                 </tr>
               </thead>
-              <tbody className="text-zinc-700 dark:text-zinc-300">
-                <tr className="border-b border-zinc-200 dark:border-zinc-800">
+              <tbody className="text-foreground">
+                <tr className="border-b border-border">
                   <td className="py-4 px-4">Monthly Word Quota</td>
                   <td className="py-4 px-4 text-center">5,000</td>
                   <td className="py-4 px-4 text-center">50,000</td>
                   <td className="py-4 px-4 text-center">Unlimited</td>
                 </tr>
-                <tr className="border-b border-zinc-200 dark:border-zinc-800">
+                <tr className="border-b border-border">
                   <td className="py-4 px-4">Active Projects</td>
                   <td className="py-4 px-4 text-center">2</td>
                   <td className="py-4 px-4 text-center">Unlimited</td>
                   <td className="py-4 px-4 text-center">Unlimited</td>
                 </tr>
-                <tr className="border-b border-zinc-200 dark:border-zinc-800">
+                <tr className="border-b border-border">
                   <td className="py-4 px-4">Planner Agent</td>
                   <td className="py-4 px-4 text-center text-green-500 dark:text-green-400">✓</td>
                   <td className="py-4 px-4 text-center text-green-500 dark:text-green-400">✓</td>
                   <td className="py-4 px-4 text-center text-green-500 dark:text-green-400">✓</td>
                 </tr>
-                <tr className="border-b border-zinc-200 dark:border-zinc-800">
+                <tr className="border-b border-border">
                   <td className="py-4 px-4">Writer Agent</td>
                   <td className="py-4 px-4 text-center text-green-500 dark:text-green-400">✓</td>
                   <td className="py-4 px-4 text-center text-green-500 dark:text-green-400">✓ Priority</td>
                   <td className="py-4 px-4 text-center text-green-500 dark:text-green-400">✓ Ultra Priority</td>
                 </tr>
-                <tr className="border-b border-zinc-200 dark:border-zinc-800">
+                <tr className="border-b border-border">
                   <td className="py-4 px-4">Proofreader Agent</td>
                   <td className="py-4 px-4 text-center text-red-500 dark:text-red-400">✗</td>
                   <td className="py-4 px-4 text-center text-green-500 dark:text-green-400">✓</td>
                   <td className="py-4 px-4 text-center text-green-500 dark:text-green-400">✓</td>
                 </tr>
-                <tr className="border-b border-zinc-200 dark:border-zinc-800">
+                <tr className="border-b border-border">
                   <td className="py-4 px-4">Citation Styles</td>
                   <td className="py-4 px-4 text-center">2 (APA, Harvard)</td>
                   <td className="py-4 px-4 text-center">All Standard</td>
                   <td className="py-4 px-4 text-center">All + Custom</td>
                 </tr>
-                <tr className="border-b border-zinc-200 dark:border-zinc-800">
+                <tr className="border-b border-border">
                   <td className="py-4 px-4">Team Collaboration</td>
                   <td className="py-4 px-4 text-center text-red-500 dark:text-red-400">✗</td>
                   <td className="py-4 px-4 text-center text-red-500 dark:text-red-400">✗</td>
                   <td className="py-4 px-4 text-center text-green-500 dark:text-green-400">✓</td>
                 </tr>
-                <tr className="border-b border-zinc-200 dark:border-zinc-800">
+                <tr className="border-b border-border">
                   <td className="py-4 px-4">API Access</td>
                   <td className="py-4 px-4 text-center text-red-500 dark:text-red-400">✗</td>
                   <td className="py-4 px-4 text-center text-red-500 dark:text-red-400">✗</td>
                   <td className="py-4 px-4 text-center text-green-500 dark:text-green-400">✓</td>
                 </tr>
-                <tr className="border-b border-zinc-200 dark:border-zinc-800">
+                <tr className="border-b border-border">
                   <td className="py-4 px-4">Support Response Time</td>
                   <td className="py-4 px-4 text-center">48 hours</td>
                   <td className="py-4 px-4 text-center">24 hours</td>
@@ -367,48 +362,48 @@ export default function Pricing() {
         </div>
 
         {/* FAQ Section */}
-        <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-800 shadow-lg mb-16">
-          <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-8 text-center">Pricing FAQ</h2>
+        <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border shadow-lg mb-16">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 text-center">Pricing FAQ</h2>
           <div className="space-y-6 max-w-3xl mx-auto">
             <div>
-              <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-2">What counts toward my word quota?</h3>
-              <p className="text-zinc-600 dark:text-zinc-400">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">What counts toward my word quota?</h3>
+              <p className="text-muted-foreground">
                 Only the final generated content counts. Planning, references, and proofreading don&apos;t consume your quota. If you regenerate a section, only the new content counts.
               </p>
             </div>
             <div>
-              <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-2">Can I upgrade or downgrade anytime?</h3>
-              <p className="text-zinc-600 dark:text-zinc-400">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">Can I upgrade or downgrade anytime?</h3>
+              <p className="text-muted-foreground">
                 Yes! Changes take effect at your next billing cycle. If you upgrade mid-cycle, we&apos;ll prorate the difference immediately.
               </p>
             </div>
             <div>
-              <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-2">What happens if I exceed my quota?</h3>
-              <p className="text-zinc-600 dark:text-zinc-400">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">What happens if I exceed my quota?</h3>
+              <p className="text-muted-foreground">
                 You&apos;ll be notified when approaching your limit. You can purchase one-time word add-ons or upgrade your plan. We won&apos;t interrupt ongoing projects.
               </p>
             </div>
             <div>
-              <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-2">Do unused words roll over?</h3>
-              <p className="text-zinc-600 dark:text-zinc-400">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">Do unused words roll over?</h3>
+              <p className="text-muted-foreground">
                 No, quotas reset monthly on your billing date. However, Enterprise plans include unlimited words.
               </p>
             </div>
             <div>
-              <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-2">Is there a free trial for Pro?</h3>
-              <p className="text-zinc-600 dark:text-zinc-400">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">Is there a free trial for Pro?</h3>
+              <p className="text-muted-foreground">
                 Yes! New users get a 14-day Pro trial with full access to all features including the Proofreader Agent.
               </p>
             </div>
             <div>
-              <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-2">What payment methods do you accept?</h3>
-              <p className="text-zinc-600 dark:text-zinc-400">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">What payment methods do you accept?</h3>
+              <p className="text-muted-foreground">
                 We accept all major credit cards, debit cards, and PayPal. Enterprise customers can request invoicing and bank transfers.
               </p>
             </div>
             <div>
-              <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-2">Are there educational discounts?</h3>
-              <p className="text-zinc-600 dark:text-zinc-400">
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">Are there educational discounts?</h3>
+              <p className="text-muted-foreground">
                 Yes! Students with a valid .edu email get 20% off Pro plans. Universities can contact us for institutional licensing.
               </p>
             </div>
@@ -416,10 +411,10 @@ export default function Pricing() {
         </div>
 
         {/* Money Back Guarantee */}
-        <div className="bg-zinc-100/80 dark:bg-zinc-800/80 backdrop-blur-sm rounded-2xl p-8 border border-zinc-200 dark:border-zinc-700 mb-16 text-center">
+        <div className="bg-secondary/80 dark:bg-zinc-800/80 backdrop-blur-sm rounded-2xl p-8 border border-border border-border mb-16 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">30-Day Money-Back Guarantee</h2>
-            <p className="text-lg sm:text-xl text-zinc-700 dark:text-zinc-300 mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">30-Day Money-Back Guarantee</h2>
+            <p className="text-lg sm:text-xl text-foreground mb-6">
               Not satisfied? Get a full refund within 30 days, no questions asked. We&apos;re confident you&apos;ll love Thesiora Writer.
             </p>
             <div className="flex justify-center space-x-4">
@@ -447,20 +442,20 @@ export default function Pricing() {
 
         {/* CTA */}
         <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-4">Ready to Get Started?</h2>
-          <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
+          <p className="text-lg sm:text-xl text-muted-foreground mb-8">
             Join thousands of students and professionals using AI-powered research assistance
           </p>
           <div className="flex justify-center space-x-4">
             <a
               href="/register"
-              className="px-8 py-4 bg-zinc-900 hover:bg-zinc-700 dark:bg-zinc-50 dark:hover:bg-zinc-200 text-white dark:text-zinc-900 font-semibold rounded-lg transition-colors duration-200"
+              className="px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-lg transition-colors duration-200"
             >
               Start Free Trial
             </a>
             <a
               href="/contact"
-              className="px-8 py-4 bg-zinc-800 hover:bg-zinc-700 dark:bg-zinc-200 dark:hover:bg-zinc-300 text-white dark:text-zinc-900 font-semibold rounded-lg transition-colors duration-200"
+              className="px-8 py-4 bg-zinc-800 hover:bg-primary/90 dark:bg-zinc-200 dark:hover:bg-zinc-300 text-primary-foreground text-foreground font-semibold rounded-lg transition-colors duration-200"
             >
               Contact Sales
             </a>
@@ -471,7 +466,7 @@ export default function Pricing() {
       </main>
 
       {/* Footerold */}
-      <Footer variant="minimal" />
+      <Footer />
     </div>
   );
 }

@@ -88,16 +88,16 @@ export default function ProjectDetailPage() {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-black">
-        <div className="text-zinc-600 dark:text-zinc-300">Loading project...</div>
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="text-muted-foreground">Loading project...</div>
       </div>
     );
   }
 
   if (error && !project) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-black">
-        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-900 dark:bg-red-950 dark:text-red-300">
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-3 text-sm text-destructive">
           {error}
         </div>
       </div>
@@ -131,7 +131,7 @@ export default function ProjectDetailPage() {
       <button
         onClick={handleAdvance}
         disabled={actionLoading}
-        className="rounded-lg bg-zinc-900 px-4 py-2 text-xs font-medium text-white shadow-md transition hover:bg-zinc-700 disabled:opacity-60 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+        className="rounded-lg bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-md transition hover:bg-primary/90 disabled:opacity-60"
       >
         {actionLoading ? "Processing..." : labels[key] || "Next"}
       </button>
@@ -139,17 +139,17 @@ export default function ProjectDetailPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-50 via-white to-zinc-100 px-6 py-10 dark:from-black dark:via-zinc-900 dark:to-zinc-950">
+    <div className="min-h-screen bg-background px-6 py-10">
       <div className="mx-auto max-w-6xl">
         <div className="mb-6 flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50">{project.title}</h1>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400">Current Status: {project.status}</p>
+            <h1 className="text-3xl font-bold text-foreground">{project.title}</h1>
+            <p className="text-sm text-muted-foreground">Current Status: {project.status}</p>
           </div>
           <div className="flex gap-2">
             <Link
               href="/dashboard"
-              className="rounded-full border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-900 transition hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-50 dark:hover:bg-zinc-900"
+              className="rounded-full border border-border px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent"
             >
               Back to Dashboard
             </Link>
@@ -157,14 +157,14 @@ export default function ProjectDetailPage() {
         </div>
 
         {error && (
-          <div className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-900 dark:bg-red-950 dark:text-red-300">
+          <div className="mb-4 rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-3 text-sm text-destructive">
             {error}
           </div>
         )}
 
         {/* Workflow Pipeline */}
-        <section className="mb-8 rounded-2xl border border-zinc-200 bg-white/80 p-6 shadow-sm backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80">
-          <h2 className="mb-6 text-lg font-semibold text-zinc-900 dark:text-zinc-50">Project Workflow</h2>
+        <section className="mb-8 rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <h2 className="mb-6 text-lg font-semibold text-card-foreground">Project Workflow</h2>
           <div className="flex items-center justify-between gap-3">
             {stages.map((stage, index) => (
               <div key={stage.key} className="flex flex-1 items-center gap-3">
@@ -172,14 +172,14 @@ export default function ProjectDetailPage() {
                 <div
                   className={`flex flex-1 flex-col items-center rounded-xl border-2 p-4 transition ${
                     index <= currentStageIndex
-                      ? "border-zinc-900 bg-zinc-900 text-white dark:border-zinc-50 dark:bg-zinc-50 dark:text-zinc-900"
-                      : "border-zinc-300 bg-white text-zinc-500 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400"
+                      ? "border-primary bg-primary text-primary-foreground"
+                      : "border-border bg-secondary text-muted-foreground"
                   }`}
                 >
                   <div className="text-2xl">{stage.icon}</div>
                   <div className="mt-2 text-center text-sm font-semibold">{stage.label}</div>
                   {index === currentStageIndex && (
-                    <div className="mt-1 rounded-full bg-white px-2 py-0.5 text-xs text-zinc-900 dark:bg-zinc-900 dark:text-zinc-50">
+                    <div className="mt-1 rounded-full bg-background px-2 py-0.5 text-xs text-foreground">
                       Current
                     </div>
                   )}
@@ -190,13 +190,13 @@ export default function ProjectDetailPage() {
                   <div className="flex flex-col items-center gap-2">
                     <div
                       className={`h-0.5 w-8 ${
-                        index < currentStageIndex ? "bg-zinc-900 dark:bg-zinc-50" : "bg-zinc-300 dark:bg-zinc-700"
+                        index < currentStageIndex ? "bg-primary" : "bg-border"
                       }`}
                     />
                     {getActionButton(stages[index].key, stages[index + 1].key)}
                     <div
                       className={`h-0.5 w-8 ${
-                        index < currentStageIndex ? "bg-zinc-900 dark:bg-zinc-50" : "bg-zinc-300 dark:bg-zinc-700"
+                        index < currentStageIndex ? "bg-primary" : "bg-border"
                       }`}
                     />
                   </div>
@@ -207,29 +207,29 @@ export default function ProjectDetailPage() {
         </section>
 
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-zinc-200 bg-white/80 p-5 shadow-sm backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80">
-            <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">Details</h2>
-            <div className="mt-3 space-y-3 text-sm text-zinc-700 dark:text-zinc-300">
+          <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+            <h2 className="text-lg font-semibold text-card-foreground">Details</h2>
+            <div className="mt-3 space-y-3 text-sm text-muted-foreground">
               <label className="block">
-                <span className="text-xs text-zinc-500">Title</span>
+                <span className="text-xs text-muted-foreground">Title</span>
                 <input
-                  className="mt-1 w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 shadow-sm focus:border-zinc-900 focus:outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50"
+                  className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 text-foreground shadow-sm focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
                   value={form.title}
                   onChange={(e) => setForm({ ...form, title: e.target.value })}
                 />
               </label>
               <label className="block">
-                <span className="text-xs text-zinc-500">Audience</span>
+                <span className="text-xs text-muted-foreground">Audience</span>
                 <input
-                  className="mt-1 w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 shadow-sm focus:border-zinc-900 focus:outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50"
+                  className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 text-foreground shadow-sm focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
                   value={form.audience}
                   onChange={(e) => setForm({ ...form, audience: e.target.value })}
                 />
               </label>
               <label className="block">
-                <span className="text-xs text-zinc-500">Citation Style</span>
+                <span className="text-xs text-muted-foreground">Citation Style</span>
                 <select
-                  className="mt-1 w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 shadow-sm focus:border-zinc-900 focus:outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50"
+                  className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 text-foreground shadow-sm focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
                   value={form.citation_style}
                   onChange={(e) => setForm({ ...form, citation_style: e.target.value })}
                 >
@@ -240,11 +240,11 @@ export default function ProjectDetailPage() {
                 </select>
               </label>
               <label className="block">
-                <span className="text-xs text-zinc-500">Total Words</span>
+                <span className="text-xs text-muted-foreground">Total Words</span>
                 <input
                   type="number"
                   min={500}
-                  className="mt-1 w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 shadow-sm focus:border-zinc-900 focus:outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50"
+                  className="mt-1 w-full rounded-lg border border-input bg-background px-3 py-2 text-foreground shadow-sm focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
                   value={form.total_words}
                   onChange={(e) => setForm({ ...form, total_words: Number(e.target.value) })}
                 />
@@ -252,17 +252,17 @@ export default function ProjectDetailPage() {
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="mt-2 w-full rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-700 disabled:opacity-60 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                className="mt-2 w-full rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/90 disabled:opacity-60"
               >
                 {saving ? "Saving..." : "Save Changes"}
               </button>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-zinc-200 bg-white/80 p-5 shadow-sm backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80">
-            <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">Brief</h2>
+          <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+            <h2 className="text-lg font-semibold text-card-foreground">Brief</h2>
             <textarea
-              className="mt-3 w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-900 shadow-sm focus:border-zinc-900 focus:outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50"
+              className="mt-3 w-full rounded-lg border border-input bg-background px-3 py-2 text-sm text-foreground shadow-sm focus:border-ring focus:outline-none focus:ring-1 focus:ring-ring"
               rows={8}
               value={form.brief}
               onChange={(e) => setForm({ ...form, brief: e.target.value })}
